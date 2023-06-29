@@ -1,0 +1,100 @@
+.flex{
+  display: flex;
+  align-items: center;
+}
+
+.none{
+  display: none;
+}
+
+#submit{
+  width: 100%;
+  margin-top: 55px;
+  background-color: $submit-color;
+  font-size: 20px;
+  border: none;
+}
+#return, #return-fill-width{
+  display: block;
+  padding: 8px;
+  margin: 55px auto;
+  background-color: $submit-color;
+  font-size: 20px;
+  text-align: center;
+}
+#return{
+  width: 50%;
+}
+#return-fill-width{
+  width: 100%;
+}
+#submit:hover, #return:hover, #return-fill-width:hover{
+  background-color: $submit-hover-color;
+}
+
+.under-form-btn, .under-paragraph-form-btn{
+  display: flex;
+  justify-content: end;
+}
+.under-paragraph-form-btn{
+  margin: 55px 0;
+}
+.cancel-btn> a, .reset-btn> a, .save-btn{
+  background-color: $submit-color;
+  text-align: center;
+  display: block;
+  width: 112px;
+  height: 37px;
+  padding: 8px 16px;
+  border-radius: 5px;
+  border: none;
+}
+.cancel-btn> a:hover, .reset-btn> a:hover, .save-btn:hover{
+  background-color: $submit-hover-color;
+}
+.cancel-btn, .reset-btn{
+  margin-right: 32px;
+}
+.cancel-btn> a, .reset-btn> a{
+  color: $black;
+}
+
+.edit-btn, .trash-btn{
+  display: block;
+  position: relative;
+  height: 16px;
+  width: 16px;
+  overflow: hidden;
+  margin-left: 16px;
+}
+.edit-btn> img, .trash-btn> img{
+  position: absolute;
+  height: 100%;
+  width: auto;
+  margin: 0 auto;
+}
+// 例外
+.edit-or-delete{
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 50px;
+  text-align: center;
+}
+.edit-or-delete-btn{
+  display: block;
+  position: relative;
+  width: 50px;
+  height: 60px;
+  overflow: hidden;
+  object-fit: contain;
+}
+
+.attach-image-label{
+  margin-bottom: 16px;
+}
+
+.destroy-messages{
+  width: 300px;
+  text-align: center;
+  margin: auto;
+}

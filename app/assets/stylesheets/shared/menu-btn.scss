@@ -1,0 +1,62 @@
+
+.header-menu {
+  display: flex;
+}
+.header-menu-open, .header-menu-close{
+  @include menu-btn-shape;
+}
+.header-menu-open {
+  display: none;
+}
+.header-menu-open> div, .header-menu-close> div{
+  height: 6px;
+  border-radius: 3px;
+  background-color: $white;
+}
+.header-menu-open > div {
+  width: 40px;
+}
+
+.header-menu-close {
+  margin: 0;
+  position: relative;
+  display: none;
+}
+
+.header-menu-close > div{
+  position: absolute;
+  width: 50px;
+  top: 22px;
+  left: 0;
+}
+.header-menu-close > div:first-child{
+  transform: rotate(-45deg);
+}
+.header-menu-close > div:last-child{
+  transform: rotate(45deg);
+}
+.header-menu-items {
+  display: flex;
+}
+
+.header-menu-items> a{
+  display: block;
+  padding: 0 8px;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.header-menu-image {
+  width: 40px;
+  height: 40px;
+  margin: 7px auto 7px;
+  background-size: contain;
+  display: flex;
+  align-items: center;
+}
+.header-menu-image img {
+  width: 40px;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+}

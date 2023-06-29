@@ -1,0 +1,131 @@
+/* shared */
+html {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Noto Sans", "Helvetica Neue", "Helvetica", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+}
+
+body {
+  background-color: #fefefe;
+  color: #222;
+}
+
+header {
+  width: 100%;
+  height: 70px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid #3c3c3c;
+  z-index: 9;
+  background-color: #4b74bc;
+}
+
+.content, .wrapper {
+  width: 90%;
+  max-width: 1440px;
+}
+
+.content {
+  margin: 0 auto;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-logo, .footer-logo {
+  font-size: 50px;
+  line-height: 70px;
+  font-family: "Roboto", sans-serif;
+}
+
+.header-menu {
+  display: flex;
+}
+
+.header-menu-open {
+  width: 50px;
+  height: 50px;
+  margin: 10px 0;
+  border-radius: 5px;
+  background-color: #222;
+  display: none;
+}
+
+.header-menu-open > div {
+  width: 40px;
+  height: 6px;
+  border-radius: 3px;
+  background-color: #fefefe;
+}
+
+.header-menu-close {
+  width: 50px;
+  height: 50px;
+  margin: 10px 0;
+  border-radius: 5px;
+  background-color: #222;
+  position: relative;
+  display: none;
+}
+
+.header-menu-close > div {
+  position: absolute;
+  width: 50px;
+  height: 6px;
+  top: 22px;
+  left: 0;
+  background-color: #fefefe;
+  border-radius: 3px;
+}
+
+.header-menu-close > div:first-child {
+  transform: rotate(-45deg);
+}
+
+.header-menu-close > div:last-child {
+  transform: rotate(45deg);
+}
+
+.header-menu-items {
+  display: flex;
+}
+
+.header-menu-items a {
+  padding: 0 8px;
+  color: #1e3050;
+}
+
+.header-menu-image {
+  width: 40px;
+  height: 40px;
+  margin: 7px auto 0;
+  background-size: contain;
+}
+
+.header-menu-image img {
+  width: 40px;
+  height: auto;
+  -o-object-fit: contain;
+  object-fit: contain;
+}
+
+footer {
+  width: 100%;
+  height: 70px;
+  background-color: #3c3c3c;
+  color: white;
+}
+
+.footer-logo {
+  width: 241px;
+  margin: 0 auto;
+}
+
+.wrapper, .device-wrapper {
+  margin: 90px auto 20px;
+}
+
+.wrapper {
+  min-height: calc(100vh - 90px - 90px);
+}/*# sourceMappingURL=shared.css.map */
