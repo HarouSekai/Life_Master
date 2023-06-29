@@ -439,7 +439,11 @@ footer {
   display: block;
 }
 
-.user-form-list > input {
+.user-form-list > input,
+#user_name,
+#user_email,
+#user_password,
+#user_password_confirmation {
   display: block;
   padding: 8px;
   width: 100%;
@@ -639,6 +643,7 @@ footer {
 }
 
 #submit {
+  padding: 8px;
   width: 100%;
   margin-top: 55px;
   background-color: #3ddc84;
