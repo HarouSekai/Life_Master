@@ -43,7 +43,6 @@ module.exports = function(api) {
       '@babel/plugin-transform-destructuring',
       [
         '@babel/plugin-proposal-class-properties',
-        "@babel/plugin-transform-private-property-in-object",
         {
           loose: true
         }
