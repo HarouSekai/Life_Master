@@ -41,9 +41,9 @@ module.exports = function(api) {
       '@babel/plugin-syntax-dynamic-import',
       isTestEnv && 'babel-plugin-dynamic-import-node',
       '@babel/plugin-transform-destructuring',
-      "@babel/plugin-transform-private-property-in-object",
       [
         '@babel/plugin-proposal-class-properties',
+        "@babel/plugin-transform-private-property-in-object",
         {
           loose: true
         }
