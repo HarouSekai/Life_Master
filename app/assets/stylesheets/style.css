@@ -1,0 +1,796 @@
+h1, h2, h3, h4, h5.h6, html {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Noto Sans", "Helvetica Neue", "Helvetica", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+h3, .hard-code-title, .hard-code-headline {
+  font-size: 24px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+/*!
+ * YUI 3.5.0 - reset.css (http://developer.yahoo.com/yui/3/cssreset/)
+ * http://cssreset.com
+ * Copyright 2012 Yahoo! Inc. All rights reserved.
+ * http://yuilibrary.com/license/
+ */
+/*
+    TODO will need to remove settings on HTML since we can't namespace it.
+    TODO with the prefix, should I group by selector or property for weight savings?
+*/
+html {
+  color: #000;
+  background: #FFF;
+}
+
+/*
+  TODO remove settings on BODY since we can't namespace it.
+*/
+/*
+  TODO test putting a class on HEAD.
+      - Fails on FF.
+*/
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+fieldset,
+img {
+  border: 0;
+}
+
+/*
+  TODO think about hanlding inheritence differently, maybe letting IE6 fail a bit...
+*/
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
+  font-style: normal;
+  font-weight: normal;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+caption,
+th {
+  text-align: left;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+q:before,
+q:after {
+  content: "";
+}
+
+abbr,
+acronym {
+  border: 0;
+  font-variant: normal;
+}
+
+/* to preserve line-height and selector appearance */
+sup {
+  vertical-align: text-top;
+}
+
+sub {
+  vertical-align: text-bottom;
+}
+
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*to enable resizing for IE*/
+input,
+textarea,
+select {
+  font-size: 100%;
+}
+
+/*because legend doesn't inherit in IE */
+legend {
+  color: #000;
+}
+
+/* YUI CSS Detection Stamp */
+#yui3-css-stamp.cssreset {
+  display: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #1e3050;
+}
+
+/* shared */
+body {
+  background-color: #fefefe;
+  color: #222;
+}
+
+header {
+  width: 100%;
+  height: 70px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid #3c3c3c;
+  z-index: 9;
+  background-color: #fefefe;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-logo {
+  color: #222;
+}
+
+.header-logo, .footer-logo {
+  font-size: 50px;
+  line-height: 70px;
+  font-family: "Roboto", sans-serif;
+}
+
+footer {
+  width: 100%;
+  height: 70px;
+  background-color: #3c3c3c;
+  color: white;
+}
+
+.footer-logo {
+  width: 300px;
+  margin: 0 auto;
+}
+
+.wrapper, .device-wrapper {
+  margin: 90px auto 20px;
+}
+
+.content, .wrapper {
+  width: 90%;
+  max-width: 1024px;
+}
+
+.wrapper {
+  margin-top: 90px;
+  min-height: calc(100vh - 90px - 90px);
+  display: flex;
+}
+
+.main {
+  width: calc(100% - 260px);
+  margin-right: auto;
+}
+
+.side {
+  position: fixed;
+  top: 120px;
+  right: calc((100vw - 1024px) / 2);
+  width: 250px;
+  padding-left: 16px;
+  overflow-y: auto;
+}
+
+.wrapper-content {
+  width: calc(100% - 10px);
+}
+
+.content, .wrapper-content {
+  margin: 0 auto;
+}
+
+.side > a {
+  display: block;
+  color: #27508d;
+  height: 25px;
+  font-size: 20px;
+  line-height: 25px;
+}
+
+.side > a:hover {
+  text-decoration: underline;
+}
+
+.header-menu {
+  display: flex;
+}
+
+.header-menu-open, .header-menu-close {
+  width: 50px;
+  height: 50px;
+  margin: 10px 0;
+  border-radius: 5px;
+  background-color: #222;
+  border: 1px solid #fefefe;
+}
+
+.header-menu-open {
+  display: none;
+}
+
+.header-menu-open > div, .header-menu-close > div {
+  height: 6px;
+  border-radius: 3px;
+  background-color: #fefefe;
+}
+
+.header-menu-open > div {
+  width: 40px;
+}
+
+.header-menu-close {
+  margin: 0;
+  position: relative;
+  display: none;
+}
+
+.header-menu-close > div {
+  position: absolute;
+  width: 50px;
+  top: 22px;
+  left: 0;
+}
+
+.header-menu-close > div:first-child {
+  transform: rotate(-45deg);
+}
+
+.header-menu-close > div:last-child {
+  transform: rotate(45deg);
+}
+
+.header-menu-items {
+  display: flex;
+}
+
+.header-menu-items > a {
+  display: block;
+  padding: 0 8px;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.header-menu-image {
+  width: 40px;
+  height: 40px;
+  margin: 7px auto 7px;
+  background-size: contain;
+  display: flex;
+  align-items: center;
+}
+
+.header-menu-image img {
+  width: 40px;
+  height: auto;
+  -o-object-fit: contain;
+  object-fit: contain;
+}
+
+.avatar-edit-wrapper {
+  width: 300px;
+  margin: 55px auto;
+}
+
+.avatar-edit {
+  display: flex;
+  position: relative;
+  width: 300px;
+  height: 300px;
+  background-color: rgba(32, 32, 32, 0.3);
+  margin-bottom: 55px;
+}
+
+.avatar-edit-circle {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.avatar-edit-items, .avatar-edit-or-delete {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-items: center;
+}
+
+.avatar-edit-or-delete {
+  width: 150px;
+}
+
+.avatar-edit-save-or-cancel {
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.article-index-avatar, .article-show-avatar, .mypage-avatar-inner {
+  display: flex;
+  border-radius: 50%;
+  background-color: #d5d5d5;
+  overflow: hidden;
+}
+
+.article-index-avatar {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.article-show-avatar {
+  width: 45px;
+  height: 45px;
+  margin-right: 16px;
+}
+
+.mypage-avatar {
+  width: 70px;
+  height: 70px;
+  margin-right: 35px;
+  position: relative;
+}
+
+.mypage-avatar-inner {
+  width: 100%;
+  height: 100%;
+}
+
+.avatar-edit > img {
+  height: 100%;
+  width: auto;
+  margin: 0 auto;
+}
+
+.article-index-avatar > img {
+  height: 20px;
+  width: auto;
+  margin: 0 auto;
+}
+
+.article-show-avatar > img {
+  height: 45px;
+  width: auto;
+  margin: 0 auto;
+}
+
+.mypage-avatar-inner > img {
+  height: 70px;
+  width: auto;
+  margin: 0 auto;
+}
+
+.user-form {
+  margin: 135px auto 110px;
+  padding: 50px;
+  width: 600px;
+  background-color: #eeeeee;
+}
+
+.user-form-list {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.user-form-list > label {
+  display: block;
+}
+
+.user-form-list > input {
+  display: block;
+  padding: 8px;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.user-info {
+  margin: 50px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mypage-name {
+  font-size: 56px;
+  margin-right: 35px;
+}
+
+.mypage-edit-or-delete > a {
+  display: block;
+  color: #27508d;
+}
+
+.mypage-edit-or-delete > a:hover {
+  text-decoration: underline;
+}
+
+#mypage-avatar-edit {
+  display: block;
+  background-color: #96add7;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+#mypage-avatar-edit > img {
+  width: 100%;
+  height: 100%;
+}
+
+.article-title > a {
+  color: #27508d;
+}
+
+.article-title > a:hover {
+  text-decoration: underline;
+}
+
+.articles {
+  margin: 50px 0;
+}
+
+.article {
+  padding: 8px;
+  border-radius: 5px;
+  margin-bottom: 30px;
+  border: 1px solid #6f6f6f;
+}
+
+.article-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.article-info {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.article-title {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.article-header-right {
+  display: flex;
+  align-items: center;
+}
+
+.article-info-right > div {
+  height: 22.5px;
+  font-size: 18px;
+  line-height: 22.5px;
+}
+
+.article-show-summary,
+.paragraph {
+  margin-bottom: 55px;
+}
+
+.article-show-content {
+  margin-bottom: 16px;
+}
+
+.article-form, #article-hard-code, #edit-article-form,
+.paragraph-form, #paragraph-hard-code, #edit-paragrapth-form,
+#edit-image-form {
+  width: 600px;
+  margin-bottom: 55px;
+}
+
+.article-form > label, .article-form > input, .article-form > textarea,
+.paragraph-form > label, .paragraph-form > input, .paragraph-form > textarea,
+#edit-article-form > label, #edit-article-form > input, #edit-article-form > textarea,
+#edit-paragraph-form > label, #edit-paragraph-form > input, #edit-paragraph-form > textarea,
+#edit-image-form > label, #edit-image-exp {
+  display: block;
+  width: 100%;
+}
+
+.article-form > input,
+.paragraph-form > input,
+#edit-article-form > input,
+#edit-paragraph-form > input,
+#edit-image-exp {
+  padding: 8px;
+  margin-bottom: 16px;
+}
+
+.article-form > textarea,
+.paragraph-form > textarea,
+#edit-article-form > textarea,
+#edit-paragraph-form > textarea {
+  padding: 8px;
+  height: 150px;
+  margin-bottom: 55px;
+}
+
+#edit-paragraph-form > textarea {
+  margin-bottom: 16px;
+}
+
+#edit-article-form, #edit-paragraph-form {
+  display: none;
+}
+
+#add-paragraph-bar, #add-image-bar {
+  position: relative;
+  height: 37px;
+}
+
+#paragraph-bar, #image-bar {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  border-radius: 1px;
+  top: calc(50% - 1px);
+  left: 0;
+  background-color: #178247;
+}
+
+#add-paragraph-btn, #add-image-btn {
+  position: absolute;
+  left: calc(50% - 65px);
+  top: 0;
+  width: 130px;
+  height: 37px;
+}
+
+#article-hard-code, .paragraph-hard-code {
+  color: #555555;
+}
+
+.paragraph-hard-code {
+  margin-bottom: 55px;
+}
+
+.article-hard-code > div,
+.paragraph-hard-code > div {
+  margin-bottom: 16px;
+}
+
+.hard-code-image {
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.hard-code-image > img {
+  max-width: 100%;
+  height: auto;
+}
+
+.hard-code-image-exp {
+  margin-bottom: 16px;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.none {
+  display: none;
+}
+
+#submit {
+  width: 100%;
+  margin-top: 55px;
+  background-color: #3ddc84;
+  font-size: 20px;
+  border: none;
+}
+
+#return, #return-fill-width {
+  display: block;
+  padding: 8px;
+  margin: 55px auto;
+  background-color: #3ddc84;
+  font-size: 20px;
+  text-align: center;
+}
+
+#return {
+  width: 50%;
+}
+
+#return-fill-width {
+  width: 100%;
+}
+
+#submit:hover, #return:hover, #return-fill-width:hover {
+  background-color: #eff7cf;
+}
+
+.under-form-btn, .under-paragraph-form-btn {
+  display: flex;
+  justify-content: end;
+}
+
+.under-paragraph-form-btn {
+  margin: 55px 0;
+}
+
+.cancel-btn > a, .reset-btn > a, .save-btn {
+  background-color: #3ddc84;
+  text-align: center;
+  display: block;
+  width: 112px;
+  height: 37px;
+  padding: 8px 16px;
+  border-radius: 5px;
+  border: none;
+}
+
+.cancel-btn > a:hover, .reset-btn > a:hover, .save-btn:hover {
+  background-color: #eff7cf;
+}
+
+.cancel-btn, .reset-btn {
+  margin-right: 32px;
+}
+
+.cancel-btn > a, .reset-btn > a {
+  color: #222;
+}
+
+.edit-btn, .trash-btn {
+  display: block;
+  position: relative;
+  height: 16px;
+  width: 16px;
+  overflow: hidden;
+  margin-left: 16px;
+}
+
+.edit-btn > img, .trash-btn > img {
+  position: absolute;
+  height: 100%;
+  width: auto;
+  margin: 0 auto;
+}
+
+.edit-or-delete {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.edit-or-delete-btn {
+  display: block;
+  position: relative;
+  width: 50px;
+  height: 60px;
+  overflow: hidden;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.attach-image-label {
+  margin-bottom: 16px;
+}
+
+.destroy-messages {
+  width: 300px;
+  text-align: center;
+  margin: auto;
+}
+
+@media (max-width: 1140px) {
+  .side {
+    right: 5vw;
+  }
+}
+@media (max-width: 768px) {
+  .header-menu-open {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 2;
+  }
+  .header-menu-items {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding-top: 57px;
+    width: 300px;
+    min-height: 100vh;
+    overflow-y: auto;
+    background-color: #222;
+    color: #fefefe;
+    flex-direction: column;
+    display: none;
+  }
+  .header-menu-items > a {
+    width: 100%;
+    height: 50px;
+    font-size: 24px;
+    line-height: 50px;
+    border-bottom: 1px solid #b2b2b2;
+    color: #fefefe;
+  }
+  .header-menu-image {
+    display: none;
+  }
+  .header-menu-close {
+    position: fixed;
+    top: 7px;
+    right: 7px;
+  }
+  .side {
+    display: none;
+  }
+  .main {
+    margin: 0 auto;
+  }
+  .article-form {
+    width: 100%;
+  }
+}/*# sourceMappingURL=style.css.map */
