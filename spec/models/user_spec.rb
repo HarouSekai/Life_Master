@@ -1,5 +1,67 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  before do
+    @user = FactoryBot.build(:user)
+  end
+
+  describe '新規登録' do
+    context '新規登録ができる場合' do
+      it '必要な情報が適切に入力されれば新規登録できる' do
+        expect(@user).to be_valid
+      end
+    end
+
+    context '新規登録ができない場合' do
+      it 'ユーザー名がなければ新規登録できない' do
+        @user.name = ''
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Name can't be blank")
+      end
+
+      it 'メールアドレスがなければ登録できない' do
+        @user.email = ''
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Email can't be blank")
+      end
+
+      it 'メールアドレスは@を含まなければ登録できない' do
+        @user.email = 'email'
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Email is invalid")
+      end
+
+      it '登録されているメールアドレスは登録できない' do
+        another_user = FactoryBot.create(:user)
+        @user.email = another_user.email
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Email has already been taken")
+      end
+
+      it 'パスワードがなければ登録できない' do
+        @user.password_confirmation = @user.password = ''
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Password can't be blank")
+      end
+
+      it 'パスワードが5文字以下では登録できない' do
+        @user.password_confirmation = @user.password = '12345'
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Password is too short (minimum is 6 characters)")
+      end
+
+      it 'パスワードが129文字以上では登録できない' do
+        @user.password_confirmation = @user.password = Faker::Internet.password(min_length: 129, max_length: 150)
+        @user.valid?
+        expect(@user.errors.full_messages).to include "Password is too long (maximum is 128 characters)"
+      end
+
+      it 'パスワードとパスワード（確認）が異なる場合は登録できない' do
+        @user.password = "123456"
+        @user.password_confirmation = "1234567"
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
+      end
+    end
+  end
 end
