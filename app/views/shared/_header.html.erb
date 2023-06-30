@@ -35,7 +35,7 @@
             マイページ
           <% end %>
           <%# </a> %>
-          <%= link_to destroy_user_session_path do %>
+          <%= link_to destroy_user_session_path, method: :delete do %>
             <div class="header-menu-image">
               <%= image_tag "logout.svg" %>
             </div>
