@@ -1,7 +1,7 @@
 <header>
   <div class="content header-content">
     <div class="header-logo">
-      <a href="../articles/index.html">Life Master</a>
+      <%= link_to "Life Master", articles_path %>
     </div>
     <div class="header-menu">
       <div>
@@ -12,7 +12,7 @@
         </label>
         <div class="header-menu-items" id="menu-items">
           <%# <a href="../articles/index.html"> %>
-          <%= link_to "#" do %>
+          <%= link_to articles_path do %>
             <div class="header-menu-image">
               <%= image_tag "articles.svg" %>
             </div>
