@@ -2,7 +2,9 @@
 <div class="device-wrapper">
   <div class="user-form">
 
-    <%= form_for(resource, class: "user-form-list", as: resource_name, url: session_path(resource_name)) do |f| %>
+    <%= form_for(resource, class: "user-form-list", as: resource_name, url: session_path(@user)) do |f| %>
+      <%= flash[:notice] %>
+      <%= flash[:alert] %>
       <div class="field">
         <label for="email" class="user-form-label">メールアドレス</label><br />
         <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
