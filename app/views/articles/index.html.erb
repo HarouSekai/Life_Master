@@ -6,7 +6,10 @@
 <div class="wrapper">
   <div class="main">
     <div class="main-content">
-      <%= render partial: "shared/articles" %>      
+      <div class="articles">
+        <%= render partial: "shared/article", collection: @articles %>
+      </div>
+      <%# 記事一覧 %>
     </div>
     <!-- //main-content -->
   </div>
