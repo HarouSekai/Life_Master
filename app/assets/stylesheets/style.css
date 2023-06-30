@@ -197,11 +197,6 @@ footer {
   color: white;
 }
 
-.footer-logo {
-  width: 300px;
-  margin: 0 auto;
-}
-
 .wrapper, .device-wrapper {
   margin: 90px auto 20px;
 }
@@ -229,6 +224,11 @@ footer {
   width: 250px;
   padding-left: 16px;
   overflow-y: auto;
+}
+
+footer> .content{
+  display: flex;
+  justify-content: center;
 }
 
 .wrapper-content {
