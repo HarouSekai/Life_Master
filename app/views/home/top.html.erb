@@ -1,7 +1,7 @@
-<%= render partial: "shared/second_header" %>
+<% if user_signed_in? %>
+  <%= render partial: "shared/header" %>
+<% else %>
+  <%= render partial: "shared/second_header" %>
+<% end %>
 <div style="height: calc(100vh - 70px);"></div>
-<footer>
-  <div class="content">
-    <div class="footer-logo">Life Master</div>
-  </div>
-</footer>
+<%= render partial: "shared/footer" %>
