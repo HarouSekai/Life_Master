@@ -90,7 +90,7 @@
       <div class="side">
         <% if user_signed_in? && current_user.id == @article.user.id %>
           <div class="edit-or-delete">
-            <%= link_to "/articles/edit", class: "edit-or-delete-btn" do%>
+            <%= link_to edit_user_article_path(@user, @article), class: "edit-or-delete-btn" do%>
               <%= image_tag "edit.svg", alt: "編集"%>
               <!-- <div>編集</div> -->
             <% end %>
