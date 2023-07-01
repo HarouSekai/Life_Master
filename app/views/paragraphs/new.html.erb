@@ -1,0 +1,33 @@
+<%= render partial: "shared/header" %>
+<div class="wrapper">
+  <div class="main">
+    <div class="main-content">
+      
+      <h2>段落を作成</h2>
+      <form class="paragraph-form">
+        <label for="headline">見出し</label>
+        <input type="text" name="headline">
+        <label for="content">本文</label>
+        <textarea name="content"></textarea>
+        <div class="under-form-btn">
+          <div class="cancel-btn">
+            <a href="../articles/edit.html">キャンセル</a>
+          </div>
+          <div class="reset-btn">
+            <a href="../paragraphs/new.html">リセット</a>
+          </div>
+          <input type="submit" value="保存" class="save-btn">
+        </div>
+      </form>
+
+    </div>
+    <!-- //main-content -->
+  </div>
+  <!-- //main -->
+  <div class="side">
+
+  </div>
+  <!-- //side -->
+</div>
+<!-- //wrapper -->
+<%= render partial: "shared/footer" %>
