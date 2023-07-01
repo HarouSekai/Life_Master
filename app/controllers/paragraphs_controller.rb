@@ -1,6 +1,7 @@
 class ParagraphsController < ApplicationController
   before_action :authenticate_user!
   before_action :find_user_article
+  before_action :find_paragraph, only: [:edit, :update]
   before_action :move_to_show
 
   def new
@@ -17,11 +18,27 @@ class ParagraphsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @paragraph.update(paragraph_params)
+      flash[:notice] = "段落が更新されました。"
+      redirect_to edit_user_article_path(@user, @article)
+    else
+      render :edit
+    end
+  end
+
   private
 
   def find_user_article
     @user = params[:user_id]
     @article = params[:article_id]
+  end
+
+  def find_paragraph
+    @paragraph = Paragraph.find(params[:id])
   end
 
   def paragraph_params
