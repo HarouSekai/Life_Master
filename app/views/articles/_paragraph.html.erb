@@ -1,0 +1,30 @@
+<div class="paragraph-hard-code" id="<%= paragraph.id %>">
+  <div class="flex">
+    <div class="hard-code-headline">
+      <%= paragraph.headline %>
+    </div>
+    <% link_to "/paragraphs/edit", class:"edit-btn" do %>
+      <% image_tag "edit.svg", alt: "編集"%>
+    <% end %>
+  </div>
+  <div class="hard-code-content">
+    <%= paragraph.content %>
+  </div>
+  <div class="hard-code-images">
+    <div class="hard-code-image">
+      <%= image_tag "article_test_image3.jpg"%>
+      <div class="hard-code-image-exp">
+        我々が登った山
+      </div>
+    </div>
+    <!-- //hard-code-image -->
+    <div class="hard-code-image">
+      <%= image_tag "article_test_image4.jpg"%>
+      <div class="hard-code-image-exp">
+        山には洞窟があった
+      </div>
+    </div>
+    <!-- //hard-code-image -->
+  </div>
+</div>
+<!-- //paragraph-hard-code -->

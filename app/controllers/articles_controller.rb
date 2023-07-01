@@ -26,6 +26,7 @@ class ArticlesController < ApplicationController
   end
 
   def edit
+    @paragraphs = @article.paragraphs
   end
 
   def update
