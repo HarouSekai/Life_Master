@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users, only: [] do
     resources :articles, only: [:index, :show, :new, :create, :edit, :update] do
-      resources :paragraphs, only: [:new, :create]
+      resources :paragraphs, only: [:new, :create, :edit, :update]
     end
   end
 end
