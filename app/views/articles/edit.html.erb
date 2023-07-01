@@ -1,0 +1,118 @@
+<%= render partial: "shared/header" %>
+<div class="wrapper">
+  <div class="main">
+    <div class="main-content">
+      <div><%= flash[:notice] %></div>
+      <h2>記事を編集</h2>
+      <div class="flex">
+        <h3>記事のアウトラインを編集</h3>
+        <label class="edit-btn" id="edit-outline-btn">
+          <%= image_tag "edit.svg", alt: "編集"%>
+        </label>
+      </div>
+
+      <%= form_with model: [@user, @article], id: "edit-article-form", local: true do |f| %>
+        <%= render "shared/error_messages", model: f.object %>
+        <%= f.label :title, "タイトル" %>
+        <%= f.text_field :title %>
+        <%= f.label :summary, "サマリー" %>
+        <%= f.text_area :summary %>
+        <div class="under-form-btn">
+          <div class="cancel-btn">
+            <%= link_to "キャンセル", user_article_path(@user, @article) %>
+          </div>
+          <div class="reset-btn">
+            <%= link_to "リセット", edit_user_article_path(@user, @article) %>
+          </div>
+          <%= f.submit "保存", class: "save-btn", id: "edit-submit-btn" %>
+        </div>
+      <% end %>
+      <!-- //edit-article-form -->
+
+      <div class="paragraphs">
+
+        <div class="paragraph-hard-code" id="0">
+          <div class="flex">
+            <div class="hard-code-headline">
+              １日目
+            </div>
+            <% link_to "/paragraphs/edit", class:"edit-btn" do %>
+              <% image_tag "edit.svg", alt: "編集"%>
+            <% end %>
+          </div>
+          <div class="hard-code-content">
+            その日、私たちは稚内の基地を出発し、北へ向かっていた。乗組員は、船長の太田、船員が４名、探検隊が私を含めて６名だった。
+          </div>
+          <div class="hard-code-images">
+            <div class="hard-code-image">
+              <% image_tag "article_test_image.jpg"%>
+              <div class="hard-code-image-exp">
+                稚内の基地
+              </div>
+            </div>
+            <!-- //hard-code-image -->
+            <div class="hard-code-image">
+              <% image_tag "article_test_image2.jpg"%>
+              <div class="hard-code-image-exp">
+                海上
+              </div>
+            </div>
+            <!-- //hard-code-image -->
+          </div>
+        </div>
+        <!-- //paragraph-hard-code -->
+
+        <div class="paragraph-hard-code" id="1">
+          <div class="flex">
+            <div class="hard-code-headline">
+              ２日目
+            </div>
+            <% link_to "/paragraphs/edit", class:"edit-btn" do %>
+              <% image_tag "edit.svg", alt: "編集"%>
+            <% end %>
+          </div>
+          <div class="hard-code-content">
+            この日、我々は暴風雨に見舞われ、船は見知らぬ島に漂着した。地元の民に話を聞くと、近くの山に登ると海を見渡すことができるという。我々はその山に登った。
+          </div>
+          <div class="hard-code-images">
+            <div class="hard-code-image">
+              <%= image_tag "article_test_image3.jpg"%>
+              <div class="hard-code-image-exp">
+                我々が登った山
+              </div>
+            </div>
+            <!-- //hard-code-image -->
+            <div class="hard-code-image">
+              <%= image_tag "article_test_image4.jpg"%>
+              <div class="hard-code-image-exp">
+                山には洞窟があった
+              </div>
+            </div>
+            <!-- //hard-code-image -->
+          </div>
+        </div>
+        <!-- //paragraph-hard-code -->
+
+        <div id="add-paragraph-bar">
+          <div id="paragraph-bar"></div>
+          <%= link_to "段落を追加", "/paragraphs/new", class:"save-btn", id: "add-paragraph-btn" %>
+        </div>
+        <!-- //add-paragraph-bar -->
+
+      </div>
+      <!-- //paragraphs -->
+      <%= link_to "戻る", user_article_path(@user, @article), id: "return"%>
+    </div>
+    <!-- //main-content -->
+  </div>
+  <!-- //main -->
+  <div class="side">
+    <%= link_to "記事２号", "#article-hard-code", class: "bold" %>
+    <%= link_to "１日目", "#0" %>
+    <%= link_to "２日目", "#1" %>
+    <%= link_to "段落を追加", "#add-paragraph-btn" %>
+  </div>
+  <!-- //side -->
+</div>
+<!-- //wrapper -->
+<%= render partial: "shared/footer" %>
