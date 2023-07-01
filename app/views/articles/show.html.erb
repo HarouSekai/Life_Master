@@ -88,16 +88,18 @@
       </div>
       <!-- //main -->
       <div class="side">
-        <div class="edit-or-delete">
-          <%= link_to "/articles/edit", class: "edit-or-delete-btn" do%>
-            <%= image_tag "edit.svg", alt: "編集"%>
-            <!-- <div>編集</div> -->
-          <% end %>
-          <%= link_to "/articles/destroy" , class: "edit-or-delete-btn" do%>
-            <%= image_tag "trash.svg", alt: "削除"%>
-            <!-- <div>削除</div> -->
-          <% end %>
-        </div>
+        <% if user_signed_in? && current_user.id == @article.user.id %>
+          <div class="edit-or-delete">
+            <%= link_to "/articles/edit", class: "edit-or-delete-btn" do%>
+              <%= image_tag "edit.svg", alt: "編集"%>
+              <!-- <div>編集</div> -->
+            <% end %>
+            <%= link_to "/articles/destroy" , class: "edit-or-delete-btn" do%>
+              <%= image_tag "trash.svg", alt: "削除"%>
+              <!-- <div>削除</div> -->
+            <% end %>
+          </div>
+        <% end %>
         <%= link_to "記事２号", "#article-show-title", class: "bold"%>
         <%= link_to "１日目", "#0"%>
         <%= link_to "２日目", "#1"%>
