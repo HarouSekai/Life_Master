@@ -1,0 +1,76 @@
+<%= render partial: "shared/header" %>
+<div class="wrapper">
+  <div class="main">
+    <div class="main-content">
+      <div class="flex">
+        <h2>段落を編集</h2>
+        <label class="edit-btn" id="edit-paragraph-btn">
+          <%= image_tag "edit.svg", alt: "編集" %>
+        </label>
+      </div>
+
+      <%= form_with url: user_article_paragraph_path(@user, @article, @paragraph), id: "edit-paragraph-form", method: :patch, local: true do |f| %>
+        <%= f.label :headline, "見出し" %>
+        <%= f.text_field :headline, value: @paragraph.headline %>
+        <%= f.label :content, "本文" %>
+        <%= f.text_area :content, value: @paragraph.content %>
+
+        <div class="under-paragraph-form-btn">
+          <div class="cancel-btn">
+            <%= link_to "キャンセル", edit_user_article_path(@user, @article) %>
+          </div>
+          <div class="reset-btn">
+            <%= link_to "リセット", edit_user_article_paragraph_path(@user, @article, @paragraph) %>
+          </div>
+          <%= f.submit "保存", class: "save-btn", id: "edit-submit-btn" %>
+        </div>
+        
+      <% end %>
+      <!-- //edit-paragraph-form -->
+
+      <div class="hard-code-images">
+        <div class="hard-code-image">
+          <div class="flex">
+            <div>画像を編集</div>
+            <a href="../images/edit.html" class="edit-btn">
+              <img src="../../images/edit.svg" alt="編集">
+            </a>
+          </div>
+          <img src="../../images/article_test_image.jpg">
+          <div class="hard-code-image-exp">
+            稚内の基地
+          </div>
+        </div>
+        <!-- //hard-code-image -->
+        <div class="hard-code-image">
+          <div class="flex">
+            <div>画像を編集</div>
+            <a href="../images/edit.html" class="edit-btn">
+              <img src="../../images/edit.svg" alt="編集">
+            </a>
+          </div>
+          <img src="../../images/article_test_image2.jpg">
+          <div class="hard-code-image-exp">
+            海上
+          </div>
+        </div>
+        <!-- //hard-code-image -->
+      </div>
+      <!-- //hard-code-images -->
+
+      <div id="add-image-bar">
+        <div id="image-bar"></div>
+        <a href="../images/new.html" class="save-btn" id="add-image-btn">画像を追加</a>
+      </div>
+      <!-- //add-image-bar -->
+      <%= link_to "戻る", edit_user_article_path(@user, @article), id: "return" %>
+    </div>
+    <!-- //main-content -->
+  </div>
+  <!-- //main -->
+  <div class="side">
+  </div>
+  <!-- //side -->
+</div>
+<!-- //wrapper -->
+<%= render partial: "shared/footer" %>
