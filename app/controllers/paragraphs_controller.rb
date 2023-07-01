@@ -6,6 +6,12 @@ class ParagraphsController < ApplicationController
   end
 
   def create
+    @paragraph = Paragraph.new(paragraph_params)
+    if @paragraph.save
+      redirect_to edit_user_article_path(@user, @article)
+    else
+      render :new
+    end
   end
 
   private
@@ -15,4 +21,7 @@ class ParagraphsController < ApplicationController
     @article = params[:article_id]
   end
 
+  def paragraph_params
+    params.permit(:headline, :content, :article_id)
+  end
 end
