@@ -547,34 +547,34 @@ footer> .content{
   margin-bottom: 55px;
 }
 
-.article-form > label, .article-form > input, .article-form > textarea,
-.paragraph-form > label, .paragraph-form > input, .paragraph-form > textarea,
-#edit-article-form > label, #edit-article-form > input, #edit-article-form > textarea,
-#edit-paragraph-form > label, #edit-paragraph-form > input, #edit-paragraph-form > textarea,
-#edit-image-form > label, #edit-image-exp {
+.article-form label, .article-form input, .article-form textarea,
+.paragraph-form label, .paragraph-form input, .paragraph-form textarea,
+#edit-article-form label, #edit-article-form input, #edit-article-form textarea,
+#edit-paragraph-form label, #edit-paragraph-form input, #edit-paragraph-form textarea,
+#edit-image-form label, #edit-image-exp {
   display: block;
   width: 100%;
 }
 
-.article-form > input,
-.paragraph-form > input,
-#edit-article-form > input,
-#edit-paragraph-form > input,
+.article-form input,
+.paragraph-form input,
+#edit-article-form input,
+#edit-paragraph-form input,
 #edit-image-exp {
   padding: 8px;
   margin-bottom: 16px;
 }
 
-.article-form > textarea,
-.paragraph-form > textarea,
-#edit-article-form > textarea,
-#edit-paragraph-form > textarea {
+.article-form textarea,
+.paragraph-form textarea,
+#edit-article-form textarea,
+#edit-paragraph-form textarea {
   padding: 8px;
   height: 150px;
   margin-bottom: 55px;
 }
 
-#edit-paragraph-form > textarea {
+#edit-paragraph-form textarea {
   margin-bottom: 16px;
 }
 
