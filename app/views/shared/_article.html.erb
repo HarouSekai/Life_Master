@@ -1,7 +1,7 @@
 <div class="article">
   <div class="article-header">
     <div class="article-title">
-      <%= link_to article.title, article_path(article) %>
+      <%= link_to article.title, user_article_path(article.user.id,article.id) %>
     </div>
     <div class="article-header-right">
       <div class="article-index-avatar">

@@ -3,7 +3,7 @@
   <div class="main">
     <div class="main-content">
       <h2>記事のアウトラインを作成</h2>
-      <%= form_with model: @article, class: "article-form", local: true do |f| %>
+      <%= form_with model: [@user,@article], class: "article-form", local: true do |f| %>
         <%= render "shared/error_messages", model: f.object %>
         <%= f.label :title, "タイトル" %>
         <%= f.text_field :title %>
@@ -11,10 +11,10 @@
         <%= f.text_area :summary %>
         <div class="under-form-btn">
           <div class="cancel-btn">
-            <%= link_to "キャンセル", articles_path %>
+            <%= link_to "キャンセル", root_path %>
           </div>
           <div class="reset-btn">
-            <%= link_to "リセット", new_article_path %>
+            <%= link_to "リセット", new_user_article_path(@user) %>
           </div>
           <%= f.submit "保存", class: "save-btn" %>
         </div>
