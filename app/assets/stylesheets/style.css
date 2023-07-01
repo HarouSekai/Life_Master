@@ -562,10 +562,6 @@ footer> .content{
   margin-bottom: 16px;
 }
 
-#edit-article-form, #edit-paragraph-form {
-  display: none;
-}
-
 #add-paragraph-bar, #add-image-bar {
   position: relative;
   height: 37px;
