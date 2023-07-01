@@ -47,9 +47,9 @@
   </div>
   <!-- //main -->
   <div class="side">
-    <%= link_to "記事のアウトラインを編集", "#edit-outline", class: "bold" %>
+    <%= link_to "記事のアウトラインを編集", "#edit-outline", class: "bold" %><%= tag.br %>
     <% @paragraphs.each do |paragraph| %>
-      <%= link_to paragraph.headline, "##{paragraph.id}" %>
+      <%= link_to paragraph.headline, "##{paragraph.id}" %><%= tag.br %>
     <% end %>
     <%= link_to "段落を追加", "#add-paragraph-btn" %>
   </div>
