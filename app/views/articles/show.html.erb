@@ -1,0 +1,108 @@
+<% if user_signed_in? %>
+  <%= render partial: "shared/header" %>
+<% else %>
+  <%= render partial: "shared/second_header" %>
+<% end %>
+    <div class="wrapper">
+      <div class="main">
+        <div class="main-content">
+          <h2 id="article-show-title"><%= @article.title %></h2>
+
+          <div class="article-info">
+            <div class="article-show-avatar">
+              <%= image_tag "user.svg"%>
+            </div>
+            <div class="article-info-right">
+              <div class="article-show-user-name">
+                <%= @article.user.name %>
+              </div>
+              <div class="article-show-data">
+                更新日：<%= @article.updated_at %>
+              </div>
+            </div>
+          </div>
+
+          <div class="article-show-summary">
+            <%= safe_join(@article.summary.split("\n"),tag.br) %>
+          </div>
+
+          <div class="paragraphs">
+            
+            <div class="paragraph" id="0">
+              <h3 class="headline">１日目</h3>
+              <div class="article-show-content">
+                その日、私たちは稚内の基地を出発し、北へ向かっていた。乗組員は、船長の太田、船員が４名、探検隊が私を含めて６名だった。
+              </div>
+              <div class="hard-code-images">
+
+                <div class="hard-code-image">
+                  <% image_tag "article_test_image.jpg" %>
+                  <div class="hard-code-image-exp">
+                    稚内の基地
+                  </div>
+                </div>
+                <div class="hard-code-image">
+                  <% image_tag "article_test_image2.jpg" %>
+                  <div class="hard-code-image-exp">
+                    海上
+                  </div>
+                </div>
+
+              </div>
+              <!-- //hard-code-images -->
+
+            </div>
+            <!-- //paragraph -->
+
+            <div class="paragraph" id="1">
+              <h3 class="headline">２日目</h3>
+              <div class="article-show-content">
+                この日、我々は暴風雨に見舞われ、船は見知らぬ島に漂着した。地元の民に話を聞くと、近くの山に登ると海を見渡すことができるという。我々はその山に登った。
+              </div>
+              <div class="hard-code-images">
+                
+                <div class="hard-code-image">
+                  <%= image_tag "article_test_image3.jpg" %>
+                  <div class="hard-code-image-exp">
+                    我々が登った山
+                  </div>
+                </div>
+                <div class="hard-code-image">
+                  <%= image_tag "article_test_image4.jpg"%>
+                  <div class="hard-code-image-exp">
+                    山には洞窟があった
+                  </div>
+                </div>
+
+              </div>
+              <!-- //hard-code-images -->
+
+            </div>
+            <!-- //paragraph -->
+
+          </div>
+          <!-- //paragraphs -->
+          
+        </div>
+        <!-- //main-content -->
+      </div>
+      <!-- //main -->
+      <div class="side">
+        <div class="edit-or-delete">
+          <%= link_to "/articles/edit", class: "edit-or-delete-btn" do%>
+            <%= image_tag "edit.svg", alt: "編集"%>
+            <!-- <div>編集</div> -->
+          <% end %>
+          <%= link_to "/articles/destroy" , class: "edit-or-delete-btn" do%>
+            <%= image_tag "trash.svg", alt: "削除"%>
+            <!-- <div>削除</div> -->
+          <% end %>
+        </div>
+        <%= link_to "記事２号", "#article-show-title", class: "bold"%>
+        <%= link_to "１日目", "#0"%>
+        <%= link_to "２日目", "#1"%>
+      </div>
+      <!-- //side -->
+    </div>
+    <!-- //wrapper -->
+    <%= render partial: "shared/footer" %>
