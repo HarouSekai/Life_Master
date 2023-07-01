@@ -3,8 +3,10 @@
     <div class="hard-code-headline">
       <%= safe_join(paragraph.headline.split("\n"),tag.br) %>
     </div>
-    <% link_to "/paragraphs/edit", class:"edit-btn" do %>
-      <% image_tag "edit.svg", alt: "編集"%>
+    <% if user_signed_in? && current_user.id == @user.id %>
+      <%= link_to edit_user_article_paragraph_path(@user, @article, paragraph), class:"edit-btn" do %>
+        <%= image_tag "edit.svg", alt: "編集"%>
+      <% end %>
     <% end %>
   </div>
   <div class="hard-code-content">
