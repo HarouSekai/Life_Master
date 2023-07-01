@@ -4,21 +4,21 @@
     <div class="main-content">
       
       <h2>段落を作成</h2>
-      <form class="paragraph-form">
-        <label for="headline">見出し</label>
-        <input type="text" name="headline">
-        <label for="content">本文</label>
-        <textarea name="content"></textarea>
+      <%= form_with url: user_article_paragraphs_path(@user, @article, @paragraph), class: "paragraph-form", local: true do |f| %>
+        <%= f.label :headline, "見出し" %>
+        <%= f.text_field :headline %>
+        <%= f.label :content, "本文" %>
+        <%= f.text_area :content %>
         <div class="under-form-btn">
           <div class="cancel-btn">
-            <a href="../articles/edit.html">キャンセル</a>
+            <%= link_to "キャンセル", edit_user_article_path(@user, @article) %>
           </div>
           <div class="reset-btn">
-            <a href="../paragraphs/new.html">リセット</a>
+            <%= link_to "リセット", new_user_article_paragraph_path(@user, @article, @paragraph) %>
           </div>
-          <input type="submit" value="保存" class="save-btn">
+          <%= f.submit "保存", class: "save-btn" %>
         </div>
-      </form>
+      <% end %>
 
     </div>
     <!-- //main-content -->
