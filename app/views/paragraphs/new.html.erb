@@ -2,7 +2,7 @@
 <div class="wrapper">
   <div class="main">
     <div class="main-content">
-      
+      <div><%= flash[:notice] %></div>
       <h2>段落を作成</h2>
       <%= form_with url: user_article_paragraphs_path(@user, @article, @paragraph), class: "paragraph-form", local: true do |f| %>
         <%= f.label :headline, "見出し" %>

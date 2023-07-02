@@ -1,7 +1,7 @@
 <%= render partial: "shared/second_header" %>
 <div class="device-wrapper">
   <div class="user-form">
-
+    <div><%= flash[:notice] %></div>
     <%= form_for(resource, class: "user-form-list", as: resource_name, url: session_path(@user)) do |f| %>
       <%= flash[:notice] %>
       <%= flash[:alert] %>

@@ -6,6 +6,7 @@
 <div class="wrapper">
   <div class="main">
     <div class="main-content">
+      <div><%= flash[:notice] %></div>
       <div class="articles">
         <%= render partial: "shared/article", collection: @articles %>
       </div>

@@ -2,6 +2,7 @@
 <div class="wrapper">
   <div class="main">
     <div class="main-content">
+      <div><%= flash[:notice] %></div>
       <h2>記事のアウトラインを作成</h2>
       <%= form_with model: [@user,@article], class: "article-form", local: true do |f| %>
         <%= render "shared/error_messages", model: f.object %>
