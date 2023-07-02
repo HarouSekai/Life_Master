@@ -1,8 +1,8 @@
 class ArticlesController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update]
-  before_action :find_article, only: [:show, :edit, :update]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :find_article, only: [:show, :edit, :update, :destroy]
   before_action :find_current_user, only: [:index, :new, :create, :edit, :update]
-  before_action :move_to_show, only: [:edit, :update]
+  before_action :move_to_show, only: [:edit, :update, :destroy]
 
   def index
     @articles = Article.order("updated_at DESC")
@@ -41,6 +41,7 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
+    @article.destroy
   end
 
   private
