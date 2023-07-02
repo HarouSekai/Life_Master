@@ -12,7 +12,7 @@
         </label>
         <div class="header-menu-items" id="menu-items">
           <%= link_to "#", style: "width:auto" do %>
-            <div style="height: 20px; margin-top:calc(50% - 10px); font-size: 16px; line-height: 20px">
+            <div id="header-user-name">
               <%= current_user.name %>
             </div>
           <% end %>
