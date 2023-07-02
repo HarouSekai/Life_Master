@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :article do
-    title { "MyString" }
-    summary { "MyText" }
+    title { Faker::Lorem.sentence }
+    summary { Faker::Lorem.paragraph }
 
     association :user
 
