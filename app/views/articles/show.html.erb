@@ -8,13 +8,13 @@
         <div class="main-content">
           <div class="flex">
             <h2 id="article-show-title"><%= @article.title %></h2>
-            <% if user_signed_in? && current_user.id == @article.user.id %>
+            <% if user_signed_in? && current_user.id == @user.id %>
               <%= link_to edit_user_article_path(@user, @article), class: "edit-btn", id: "edit-outline-btn" do%>
                 <%= image_tag "edit.svg", alt: "編集"%>
               <% end %>
-              <label class="trash-btn" id="trash-outline-btn" data-article-id="<%= @article.id %>">
+              <%= link_to user_article_path(@user, @article), class: "trash-btn", id: "trash-outline-btn", method: :delete do %>
                 <%= image_tag "trash.svg", alt: "削除" %>
-              </label>
+              <% end %>
             <% end %>
           </div>
 

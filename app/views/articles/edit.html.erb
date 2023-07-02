@@ -9,9 +9,9 @@
         <label class="edit-btn" id="edit-outline-btn">
           <%= image_tag "edit.svg", alt: "編集"%>
         </label>
-        <label class="trash-btn" id="trash-outline-btn" data-article-id="<%= @article.id %>">
+        <%= link_to user_article_path(@user, @article), class: "trash-btn", id: "trash-outline-btn", method: :delete do %>
           <%= image_tag "trash.svg", alt: "削除" %>
-        </label>
+        <% end %>
       </div>
 
       <%= form_with model: [@user, @article], id: "edit-article-form", local: true do |f| %>
