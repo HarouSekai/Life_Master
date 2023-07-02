@@ -6,7 +6,17 @@
     <div class="wrapper">
       <div class="main">
         <div class="main-content">
-          <h2 id="article-show-title"><%= @article.title %></h2>
+          <div class="flex">
+            <h2 id="article-show-title"><%= @article.title %></h2>
+            <% if user_signed_in? && current_user.id == @article.user.id %>
+              <%= link_to edit_user_article_path(@user, @article), class: "edit-btn", id: "edit-outline-btn" do%>
+                <%= image_tag "edit.svg", alt: "編集"%>
+              <% end %>
+              <label class="trash-btn" id="trash-outline-btn" data-article-id="<%= @article.id %>">
+                <%= image_tag "trash.svg", alt: "削除" %>
+              </label>
+            <% end %>
+          </div>
 
           <div class="article-info">
             <div class="article-show-avatar">
@@ -38,17 +48,6 @@
       </div>
       <!-- //main -->
       <div class="side">
-        <% if user_signed_in? && current_user.id == @article.user.id %>
-          <div class="edit-or-delete">
-            <%= link_to edit_user_article_path(@user, @article), class: "edit-or-delete-btn" do%>
-              <%= image_tag "edit.svg", alt: "編集"%>
-            <% end %>
-            <%#= link_to "/articles/destroy" , class: "edit-or-delete-btn" do%>
-              <%#= image_tag "trash.svg", alt: "削除"%>
-              <!-- <div>削除</div> -->
-            <%# end %>
-          </div>
-        <% end %>
         <%= link_to @article.title, "#article-show-title", class: "bold"%><%= tag.br %>
         <% @paragraphs.each do |paragraph| %>
           <%= link_to paragraph.headline, "##{paragraph.id}" %><%= tag.br %>
