@@ -11,14 +11,17 @@
           <div></div>
         </label>
         <div class="header-menu-items" id="menu-items">
-          <%# <a href="../articles/index.html"> %>
+          <%= link_to "#", style: "width:auto" do %>
+            <div style="height: 20px; margin-top:calc(50% - 10px); font-size: 16px; line-height: 20px">
+              <%= current_user.name %>
+            </div>
+          <% end %>
           <%= link_to root_path do %>
             <div class="header-menu-image">
               <%= image_tag "articles.svg" %>
             </div>
             記事一覧
           <% end %>
-          <%# </a> %>
           
           <%= link_to new_user_article_path(current_user) do %>
             <div class="header-menu-image">
@@ -28,12 +31,12 @@
           <% end %>
           
           <%# <a href="../users/show.html"> %>
-          <%= link_to "#" do %>
-            <div class="header-menu-image">
-              <%= image_tag "user.svg" %>
-            </div>
-            マイページ
-          <% end %>
+          <%#= link_to "マイページのURL" do %>
+            <%# <div class="header-menu-image"> %>
+              <%#= image_tag "user.svg" %>
+            <%# </div> %>
+            <%# マイページ %>
+          <%# end %>
           <%# </a> %>
           <%= link_to destroy_user_session_path, method: :delete do %>
             <div class="header-menu-image">
