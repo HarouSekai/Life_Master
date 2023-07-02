@@ -551,10 +551,10 @@ footer> .content{
   margin-bottom: 55px;
 }
 
-.article-form label, .article-form input, .article-form textarea,
-.paragraph-form label, .paragraph-form input, .paragraph-form textarea,
-#edit-article-form label, #edit-article-form input, #edit-article-form textarea,
-#edit-paragraph-form label, #edit-paragraph-form input, #edit-paragraph-form textarea,
+.article-form label, .article-form input:not(:last-child), .article-form textarea,
+.paragraph-form label, .paragraph-form input:not(:last-child), .paragraph-form textarea,
+#edit-article-form label, #edit-article-form input:not(:last-child), #edit-article-form textarea,
+#edit-paragraph-form label, #edit-paragraph-form input:not(:last-child), #edit-paragraph-form textarea,
 #edit-image-form label, #edit-image-exp {
   display: block;
   width: 100%;
@@ -601,7 +601,7 @@ footer> .content{
   position: absolute;
   left: calc(50% - 65px);
   top: 0;
-  width: 130px;
+  width: auto;
   height: 37px;
 }
 
@@ -681,11 +681,19 @@ footer> .content{
   background-color: #3ddc84;
   text-align: center;
   display: block;
-  width: 112px;
+  /* width: 112px; */
   height: 37px;
   padding: 8px 16px;
   border-radius: 5px;
   border: none;
+}
+
+.save-btn {
+  width: calc((100% - 32px - 32px)/3);
+}
+
+.cancel-btn > a, .reset-btn > a {
+  width: 100%;
 }
 
 .cancel-btn > a:hover, .reset-btn > a:hover, .save-btn:hover {
@@ -694,6 +702,7 @@ footer> .content{
 
 .cancel-btn, .reset-btn {
   margin-right: 32px;
+  width: calc((100% - 32px - 32px)/3);
 }
 
 .cancel-btn > a, .reset-btn > a {
