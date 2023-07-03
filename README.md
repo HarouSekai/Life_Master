@@ -96,10 +96,12 @@ https://docs.google.com/spreadsheets/d/1JRbDY71gTuhDGhRW3pDavLwDgaZRleQ_kkupSTxs
 * アプリケーション紹介ページ<br>
 
 # データベース設計
-![Alt text](image.png)
+
+[![Image from Gyazo](https://i.gyazo.com/2b8791edb93b4f4e5063b0694b6f4215.png)](https://gyazo.com/2b8791edb93b4f4e5063b0694b6f4215)
 
 # 画面遷移図
-![Alt text](image-1.png)
+
+[![Image from Gyazo](https://i.gyazo.com/3d73c1033a1d939bf7c859ec7bde2607.png)](https://gyazo.com/3d73c1033a1d939bf7c859ec7bde2607)
 
 # 開発環境
 * HTML<br>
