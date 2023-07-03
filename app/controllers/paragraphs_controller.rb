@@ -1,7 +1,7 @@
 class ParagraphsController < ApplicationController
   before_action :authenticate_user!
   before_action :find_user_article
-  before_action :find_paragraph, only: [:edit, :update, :destroy]
+  before_action :find_paragraph_images, only: [:edit, :update, :destroy]
   before_action :move_to_show
 
   def new
@@ -43,8 +43,9 @@ class ParagraphsController < ApplicationController
     @article = params[:article_id]
   end
 
-  def find_paragraph
+  def find_paragraph_images
     @paragraph = Paragraph.find(params[:id])
+    @images = @paragraph.images
   end
 
   def paragraph_params
