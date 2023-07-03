@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :users, only: [] do
     resources :articles do
       resources :paragraphs, only: [:new, :create, :edit, :update, :destroy] do
-        resources :images, only: [:new, :create]
+        resources :images, only: [:new, :create, :edit, :update]
       end
     end
   end
