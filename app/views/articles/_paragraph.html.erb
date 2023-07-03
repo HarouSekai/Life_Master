@@ -7,6 +7,9 @@
       <%= link_to edit_user_article_paragraph_path(@user, @article, paragraph), class:"edit-btn" do %>
         <%= image_tag "edit.svg", alt: "編集"%>
       <% end %>
+      <%= link_to user_article_paragraph_path(@user, @article, paragraph), class: "trash-btn", method: :delete do %>
+        <%= image_tag "trash.svg", alt: "削除" %>
+      <% end %>
     <% end %>
   </div>
   <div class="hard-code-content">
