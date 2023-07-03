@@ -97,11 +97,11 @@ https://docs.google.com/spreadsheets/d/1JRbDY71gTuhDGhRW3pDavLwDgaZRleQ_kkupSTxs
 
 # データベース設計
 
-[![Image from Gyazo](https://i.gyazo.com/2b8791edb93b4f4e5063b0694b6f4215.png)](https://gyazo.com/2b8791edb93b4f4e5063b0694b6f4215)
+[![Image from Gyazo](https://i.gyazo.com/8fe86bce7f17de3c94707ce98f1f3bd7.png)](https://gyazo.com/8fe86bce7f17de3c94707ce98f1f3bd7)
 
 # 画面遷移図
 
-[![Image from Gyazo](https://i.gyazo.com/3d73c1033a1d939bf7c859ec7bde2607.png)](https://gyazo.com/3d73c1033a1d939bf7c859ec7bde2607)
+[![Image from Gyazo](https://i.gyazo.com/7a92af7a21014e5dea9d666541732091.png)](https://gyazo.com/7a92af7a21014e5dea9d666541732091)
 
 # 開発環境
 * HTML<br>

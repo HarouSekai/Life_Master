@@ -807,6 +807,9 @@ input.user-form-item {
   }
 }/*# sourceMappingURL=style.css.map */
 @media (max-width: 425px) {
+  .header-logo {
+    font-size: 24px;
+  }
   .cancel-btn, .reset-btn, .save-btn {
     width: 100%;
   }
