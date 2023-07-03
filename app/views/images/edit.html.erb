@@ -12,7 +12,7 @@
     </div>
     <!-- //hard-code-image -->
 
-    <%= form_with url: user_article_paragraph_images_path(@user, @article, @paragraph, @image), id: "edit-image-form", multipart: true, local: true do |f| %>
+    <%= form_with url: user_article_paragraph_image_path(@user, @article, @paragraph, @image), id: "edit-image-form", method: :put, multipart: true, local: true do |f| %>
       <%= f.label :image, "画像を変更", class: "attach-image-label" %>
       <%= f.file_field :image, class: "attach-image" %>
       <%= f.label :iamge_exp, "画像の説明" %>
