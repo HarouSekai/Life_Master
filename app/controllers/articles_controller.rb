@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :find_article, only: [:show, :edit, :update, :destroy]
+  before_action :find_paragraphs, only: [:show, :edit]
   before_action :find_current_user, only: [:index, :new, :create, :edit, :update]
   before_action :move_to_show, only: [:edit, :update, :destroy]
 
@@ -10,7 +11,6 @@ class ArticlesController < ApplicationController
 
   def show
     @user = User.find(params[:user_id])
-    @paragraphs = @article.paragraphs
   end
 
   def new
@@ -28,7 +28,6 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    @paragraphs = @article.paragraphs
   end
 
   def update
@@ -54,6 +53,10 @@ class ArticlesController < ApplicationController
 
   def find_article
     @article = Article.find(params[:id])
+  end
+
+  def find_paragraphs
+    @paragraphs = @article.paragraphs.order("created_at ASC")
   end
 
   def article_params
