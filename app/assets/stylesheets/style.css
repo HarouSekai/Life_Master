@@ -736,7 +736,11 @@ input.user-form-item {
 }
 
 .attach-image-label {
-  margin-bottom: 16px;
+  margin-bottom: 8px;
+}
+
+.attach-image {
+  margin-bottom: 32px;
 }
 
 .destroy-messages {
