@@ -1,7 +1,7 @@
 class ParagraphsController < ApplicationController
   before_action :authenticate_user!
   before_action :find_user_article
-  before_action :find_paragraph, only: [:edit, :update]
+  before_action :find_paragraph, only: [:edit, :update, :destroy]
   before_action :move_to_show
 
   def new
@@ -28,6 +28,12 @@ class ParagraphsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @paragraph.destroy
+    flash[:notice] = "段落を削除しました。"
+    redirect_to edit_user_article_path(@user, @article)
   end
 
   private
