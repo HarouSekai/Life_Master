@@ -1,33 +1,31 @@
 <%= render partial: "shared/second_header" %>
-<div class="device-wrapper">
-  <div class="user-form">
-    <div><%= flash[:notice] %></div>
-    <%= form_for(resource, class: "user-form-list", as: resource_name, url: session_path(@user)) do |f| %>
-      <%= flash[:notice] %>
-      <%= flash[:alert] %>
+<div class="wrapper">
+  <div><%= flash[:notice] %></div>
+  <%= form_for(resource, as: resource_name, url: session_path(@user)) do |f| %>
+    <%= flash[:notice] %>
+    <%= flash[:alert] %>
+    <div class="field">
+      <label for="email" class="user-form-item">メールアドレス</label>
+      <%= f.email_field :email, class: "user-form-item", autofocus: true, autocomplete: "email" %>
+    </div>
+
+    <div class="field">
+      <label for="password" class="user-form-item">パスワード</label>
+      <%= f.password_field :password, class: "user-form-item", autocomplete: "current-password" %>
+    </div>
+
+    <% if devise_mapping.rememberable? %>
       <div class="field">
-        <label for="email" class="user-form-label">メールアドレス</label><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-      </div>
-
-      <div class="field">
-        <label for="password" class="user-form-label">パスワード</label><br />
-        <%= f.password_field :password, autocomplete: "current-password" %>
-      </div>
-
-      <% if devise_mapping.rememberable? %>
-        <div class="field">
-          <%= f.check_box :remember_me %>
-          <%= f.label :remember_me %>
-        </div>
-      <% end %>
-
-      <div class="actions">
-        <%= f.submit "ログイン", id: "submit" %>
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me %>
       </div>
     <% end %>
 
-    <%#= render "devise/shared/links" %>
-  </div>
+    <div class="actions">
+      <%= f.submit "ログイン", id: "submit" %>
+    </div>
+  <% end %>
+
+  <%#= render "devise/shared/links" %>
 </div>
 <%= render partial: "shared/footer" %>

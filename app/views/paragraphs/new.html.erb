@@ -1,27 +1,23 @@
 <%= render partial: "shared/header" %>
 <div class="wrapper">
   <div class="main">
-    <div class="main-content">
-      <div><%= flash[:notice] %></div>
-      <h2>段落を作成</h2>
-      <%= form_with url: user_article_paragraphs_path(@user, @article, @paragraph), class: "paragraph-form", local: true do |f| %>
-        <%= f.label :headline, "見出し" %>
-        <%= f.text_field :headline %>
-        <%= f.label :content, "本文" %>
-        <%= f.text_area :content %>
-        <div class="under-form-btn">
-          <div class="cancel-btn">
-            <%= link_to "キャンセル", edit_user_article_path(@user, @article) %>
-          </div>
-          <div class="reset-btn">
-            <%= link_to "リセット", new_user_article_paragraph_path(@user, @article, @paragraph) %>
-          </div>
-          <%= f.submit "保存", class: "save-btn" %>
+    <div><%= flash[:notice] %></div>
+    <h2>段落を作成</h2>
+    <%= form_with url: user_article_paragraphs_path(@user, @article, @paragraph), class: "paragraph-form", local: true do |f| %>
+      <%= f.label :headline, "見出し" %>
+      <%= f.text_field :headline %>
+      <%= f.label :content, "本文" %>
+      <%= f.text_area :content %>
+      <div class="under-form-btn">
+        <div class="cancel-btn">
+          <%= link_to "キャンセル", edit_user_article_path(@user, @article) %>
         </div>
-      <% end %>
-
-    </div>
-    <!-- //main-content -->
+        <div class="reset-btn">
+          <%= link_to "リセット", new_user_article_paragraph_path(@user, @article, @paragraph) %>
+        </div>
+        <%= f.submit "保存", class: "save-btn" %>
+      </div>
+    <% end %>
   </div>
   <!-- //main -->
   <div class="side">

@@ -5,14 +5,11 @@
 <% end %>
 <div class="wrapper">
   <div class="main">
-    <div class="main-content">
-      <div><%= flash[:notice] %></div>
-      <div class="articles">
-        <%= render partial: "shared/article", collection: @articles %>
-      </div>
-      <%# 記事一覧 %>
+    <div><%= flash[:notice] %></div>
+    <div class="articles">
+      <%= render partial: "shared/article", collection: @articles %>
     </div>
-    <!-- //main-content -->
+    <%# 記事一覧 %>
   </div>
   <!-- //main -->
   <div class="side"></div>

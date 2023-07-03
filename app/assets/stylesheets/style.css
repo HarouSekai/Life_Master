@@ -202,18 +202,17 @@ footer {
 }
 
 .content, .wrapper {
-  width: 90%;
+  width: calc(100% - 32px);
   max-width: 1024px;
 }
 
 .wrapper {
   margin-top: 90px;
   min-height: calc(100vh - 90px - 90px);
-  /* display: flex; */
 }
 
 .main {
-  width: calc(100% - 260px);
+  width: calc(100% - 250px - 16px);
   margin-right: auto;
 }
 
@@ -222,8 +221,11 @@ footer {
   top: 120px;
   right: calc((100vw - 1024px) / 2);
   width: 250px;
-  padding-left: 16px;
   overflow-y: auto;
+}
+
+.content{
+  overflow-x: auto;
 }
 
 footer> .content{
@@ -427,30 +429,21 @@ footer> .content{
   margin: 0 auto;
 }
 
-.user-form {
+#new_user, #edit-user {
   margin: 135px auto 110px;
-  padding: 50px;
-  width: 600px;
+  padding: calc(10px + (100vw - 768px)/40);
+  width: 100%;
+  max-width: 600px;
   background-color: #eeeeee;
 }
 
-.user-form-list {
-  width: 90%;
-  margin: 0 auto;
-}
-
-.user-form-list > label {
-  display: block;
-}
-
-.user-form-list > input,
-#user_name,
-#user_email,
-#user_password,
-#user_password_confirmation {
+.user-form-item {
   display: block;
   padding: 8px;
   width: 100%;
+}
+
+input.user-form-item {
   margin-bottom: 16px;
 }
 
@@ -547,23 +540,24 @@ footer> .content{
 .article-form, #article-hard-code, #edit-article-form,
 .paragraph-form, #paragraph-hard-code, #edit-paragrapth-form,
 #edit-image-form {
-  width: 600px;
+  width: 100%;
+  max-width: 600px;
   margin-bottom: 55px;
 }
 
-.article-form label, .article-form input:not(:last-child), .article-form textarea,
-.paragraph-form label, .paragraph-form input:not(:last-child), .paragraph-form textarea,
-#edit-article-form label, #edit-article-form input:not(:last-child), #edit-article-form textarea,
-#edit-paragraph-form label, #edit-paragraph-form input:not(:last-child), #edit-paragraph-form textarea,
+.article-form label, .article-form input:not(.save-btn), .article-form textarea,
+.paragraph-form label, .paragraph-form input:not(.save-btn), .paragraph-form textarea,
+#edit-article-form label, #edit-article-form input:not(.save-btn), #edit-article-form textarea,
+#edit-paragraph-form label, #edit-paragraph-form input:not(.save-btn), #edit-paragraph-form textarea,
 #edit-image-form label, #edit-image-exp {
   display: block;
   width: 100%;
 }
 
-.article-form input,
-.paragraph-form input,
-#edit-article-form input,
-#edit-paragraph-form input,
+.article-form input:not(.save-btn),
+.paragraph-form input:not(.save-btn),
+#edit-article-form input:not(.save-btn),
+#edit-paragraph-form input:not(.save-btn),
 #edit-image-exp {
   padding: 8px;
   margin-bottom: 16px;
@@ -599,10 +593,11 @@ footer> .content{
 
 #add-paragraph-btn, #add-image-btn {
   position: absolute;
+  padding: 0 8px;
   left: calc(50% - 65px);
   top: 0;
   width: auto;
-  height: 37px;
+  height: 36px;
 }
 
 .paragraph-hard-code {
@@ -670,39 +665,37 @@ footer> .content{
 
 .under-form-btn, .under-paragraph-form-btn {
   display: flex;
-  justify-content: end;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .under-paragraph-form-btn {
   margin: 55px 0;
 }
 
-.cancel-btn > a, .reset-btn > a, .save-btn {
-  background-color: #3ddc84;
-  text-align: center;
-  display: block;
-  /* width: 112px; */
-  height: 37px;
-  padding: 8px 16px;
-  border-radius: 5px;
-  border: none;
-}
-
-.save-btn {
-  width: calc((100% - 32px - 32px)/3);
+.cancel-btn, .reset-btn, .save-btn {
+  width: 120px;
+  margin-bottom: 16px;
 }
 
 .cancel-btn > a, .reset-btn > a {
   width: 100%;
 }
 
-.cancel-btn > a:hover, .reset-btn > a:hover, .save-btn:hover {
-  background-color: #eff7cf;
+.cancel-btn > a, .reset-btn > a, .save-btn {
+  background-color: #3ddc84;
+  display: block;
+  padding: 0;
+  border-radius: 5px;
+  border: none;
+  height: 36px;
+  text-align: center;
+  font-size: 20px;
+  line-height: 36px;
 }
 
-.cancel-btn, .reset-btn {
-  margin-right: 32px;
-  width: calc((100% - 32px - 32px)/3);
+.cancel-btn > a:hover, .reset-btn > a:hover, .save-btn:hover {
+  background-color: #eff7cf;
 }
 
 .cancel-btn > a, .reset-btn > a {
@@ -803,9 +796,18 @@ footer> .content{
     display: none;
   }
   .main {
+    width: 100%;
     margin: 0 auto;
+  }
+  #new_user, #edit-user {
+    padding: 8px;
   }
   .article-form {
     width: 100%;
   }
 }/*# sourceMappingURL=style.css.map */
+@media (max-width: 425px) {
+  .cancel-btn, .reset-btn, .save-btn {
+    width: 100%;
+  }
+}
