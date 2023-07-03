@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+ #header-user-name {
+  height: 20px;
+  margin-top: 25px;
+  font-size: 16px;
+  line-height: 20px;
+}

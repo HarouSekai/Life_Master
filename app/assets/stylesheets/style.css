@@ -209,7 +209,7 @@ footer {
 .wrapper {
   margin-top: 90px;
   min-height: calc(100vh - 90px - 90px);
-  display: flex;
+  /* display: flex; */
 }
 
 .main {
@@ -252,13 +252,6 @@ footer> .content{
 
 .header-menu {
   display: flex;
-}
-
-#header-user-name {
-  height: 20px;
-  margin-top: calc(50% - 10px);
-  font-size: 16px;
-  line-height: 20px;
 }
 
 .header-menu-open, .header-menu-close {
