@@ -568,7 +568,7 @@ input.user-form-item {
 #edit-article-form textarea,
 #edit-paragraph-form textarea {
   padding: 8px;
-  height: 150px;
+  height: 300px;
   margin-bottom: 55px;
 }
 
@@ -813,6 +813,9 @@ input.user-form-item {
 @media (max-width: 425px) {
   .header-logo {
     font-size: 24px;
+  }
+  .under-form-btn, .under-paragraph-form-btn {
+    flex-direction: column-reverse;
   }
   .cancel-btn, .reset-btn, .save-btn {
     width: 100%;
