@@ -594,7 +594,7 @@ input.user-form-item {
 #add-paragraph-btn, #add-image-btn {
   position: absolute;
   padding: 0 8px;
-  left: calc(50% - 65px);
+  left: calc(50% - 58px);
   top: 0;
   width: auto;
   height: 36px;
