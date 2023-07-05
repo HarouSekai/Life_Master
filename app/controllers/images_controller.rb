@@ -32,7 +32,7 @@ class ImagesController < ApplicationController
     if @image_data
       if @image.update(@image_parameter)
         binwrite_image
-        flash[:notice] = "画像を更新しました。画像が表示されない場合は、タブを閉じてから、再びアクセスしてください。"
+        flash[:notice] = "画像を更新しました。画像が表示されない場合は、ブラウザを閉じてから、再びアクセスしてください。"
         redirect_to edit_user_article_paragraph_path(@user, @article, @paragraph)
       else
         flash[:notice] = "画像の更新に失敗しました。"
