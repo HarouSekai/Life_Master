@@ -45,6 +45,14 @@ class ImagesController < ApplicationController
   end
 
   def destroy
+    if File.delete("public/image/#{@image.id}.png")
+      @image.destroy
+      flash[:notice] = "画像を削除しました。"
+      redirect_to edit_user_article_paragraph_path(@user, @article, @paragraph)
+    else
+      flash[:notice] = "画像の削除に失敗しました。"
+      redirect_to edit_user_article_paragraph_path(@user, @article, @paragraph)
+    end
   end
 
   private
