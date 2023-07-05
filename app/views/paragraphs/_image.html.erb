@@ -4,7 +4,7 @@
     <%= link_to edit_user_article_paragraph_image_path(image.paragraph.article.user, image.paragraph.article, image.paragraph, image), class: "edit-btn" do %>
       <%= image_tag "edit.svg", alt: "編集" %>
     <% end %>
-    <%= link_to user_article_paragraph_image_path(image.paragraph.article.user, image.paragraph.article, image.paragraph, image), class: "trash-btn" do %>
+    <%= link_to user_article_paragraph_image_path(image.paragraph.article.user, image.paragraph.article, image.paragraph, image), class: "trash-btn", method: :delete do %>
       <%= image_tag "trash.svg", alt: "削除" %>
     <% end %>
   </div>
