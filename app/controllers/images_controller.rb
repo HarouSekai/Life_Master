@@ -2,7 +2,7 @@ class ImagesController < ApplicationController
   before_action :authenticate_user!
   before_action :find_parents
   before_action :move_to_show
-  before_action :find_image, only: [:edit, :update]
+  before_action :find_image, only: [:edit, :update, :destroy]
   before_action :image_params, only: [:create, :update]
 
   def new
@@ -42,6 +42,9 @@ class ImagesController < ApplicationController
       flash[:notice] = "画像を選択してください。"
       render :edit
     end
+  end
+
+  def destroy
   end
 
   private
