@@ -16,20 +16,7 @@
     <%= safe_join(paragraph.content.split("\n"),tag.br) %>
   </div>
   <div class="hard-code-images">
-    <div class="hard-code-image">
-      <%#= image_tag "画像URL1"%>
-      <div class="hard-code-image-exp">
-        <%#= "画像の説明1" %>
-      </div>
-    </div>
-    <!-- //hard-code-image -->
-    <div class="hard-code-image">
-      <%#= image_tag "画像URL2"%>
-      <div class="hard-code-image-exp">
-        <%#= "画像の説明2" %>
-      </div>
-    </div>
-    <!-- //hard-code-image -->
+    <%= render partial: "paragraphs/image", collection: paragraph.images %>
   </div>
 </div>
 <!-- //paragraph-hard-code -->
