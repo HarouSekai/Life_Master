@@ -30,14 +30,12 @@
             新規作成
           <% end %>
           
-          <%# <a href="../users/show.html"> %>
-          <%#= link_to "マイページのURL" do %>
-            <%# <div class="header-menu-image"> %>
-              <%#= image_tag "user.svg" %>
-            <%# </div> %>
-            <%# マイページ %>
-          <%# end %>
-          <%# </a> %>
+          <%= link_to user_path(current_user) do %>
+            <div class="header-menu-image">
+              <%= image_tag "user.svg" %>
+            </div>
+            マイページ
+          <% end %>
           <%= link_to destroy_user_session_path, method: :delete do %>
             <div class="header-menu-image">
               <%= image_tag "logout.svg" %>

@@ -429,6 +429,14 @@ footer> .content{
   margin: 0 auto;
 }
 
+.article-show-user-name> a{
+  color: #27508d;
+}
+
+.article-show-user-name> a:hover {
+  text-decoration: underline;
+}
+
 #new_user, #edit-user {
   margin: 135px auto 110px;
   padding: calc(10px + (100vw - 768px)/40);

@@ -24,7 +24,9 @@
           </div>
           <div class="article-info-right">
             <div class="article-show-user-name">
-              <%= @article.user.name %>
+              <%= link_to user_path(@user) do %>
+                <%= @article.user.name %>
+              <% end %>
             </div>
             <div class="article-show-data">
               更新日：<%= @article.updated_at %>
