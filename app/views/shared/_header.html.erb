@@ -11,7 +11,7 @@
           <div></div>
         </label>
         <div class="header-menu-items" id="menu-items">
-          <%= link_to "#", style: "width:auto" do %>
+          <%= link_to user_path(current_user), style: "width:auto" do %>
             <div id="header-user-name">
               <%= current_user.name %>
             </div>
