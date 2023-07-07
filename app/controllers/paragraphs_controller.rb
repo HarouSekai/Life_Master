@@ -31,8 +31,10 @@ class ParagraphsController < ApplicationController
   end
 
   def destroy
-    @paragraph.destroy
-    flash[:notice] = "段落を削除しました。"
+    if destroy_images(@images)
+      @paragraph.destroy
+      flash[:notice] = "段落を削除しました。"
+    end
     redirect_to edit_user_article_path(@user, @article)
   end
 
@@ -55,5 +57,11 @@ class ParagraphsController < ApplicationController
   def move_to_show
     return unless current_user.id != params[:user_id].to_i
     redirect_to user_article_path(params[:user_id], params[:article_id])
+  end
+
+  def destroy_images(images)
+    images.each do |image|
+      File.delete("public/image/#{image.id}.png")
+    end
   end
 end
