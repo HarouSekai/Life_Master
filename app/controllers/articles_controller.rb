@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :find_article, only: [:show, :edit, :update, :destroy]
-  before_action :find_paragraphs, only: [:show, :edit]
+  before_action :find_paragraphs, only: [:show, :edit, :destroy]
   before_action :find_current_user, only: [:index, :new, :create, :edit, :update]
   before_action :move_to_show, only: [:edit, :update, :destroy]
 
@@ -40,7 +40,12 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    @article.destroy
+    images_array(@paragraphs)
+    if destroy_images(@images)
+      @article.destroy
+    else
+      redirect_to user_article_path(params[:user_id], params[:id])
+    end
   end
 
   private
@@ -66,5 +71,21 @@ class ArticlesController < ApplicationController
   def move_to_show
     return unless current_user.id != params[:user_id].to_i
     redirect_to user_article_path(params[:user_id], params[:id])
+  end
+
+  def images_array(paragraphs)
+    @images = []
+    paragraphs.each do |paragraph|
+      paragraph.images.each do |image|
+        @images << image
+      end
+    end
+    return @images
+  end
+
+  def destroy_images(images)
+    images.each do |image|
+      File.delete("public/image/#{image.id}.png")
+    end
   end
 end
