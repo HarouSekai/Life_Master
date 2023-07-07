@@ -21,7 +21,7 @@
       </div>
       <% if user_signed_in? && current_user.id == @user.id %>
         <div class="mypage-edit-or-delete">
-          <%= link_to "アカウント編集", "#/users/edit" %>
+          <%= link_to "アカウント編集", edit_registration_path(@user) %>
           <%= link_to "アカウント削除", "#/users/destroy" %>
         </div>
       <% end %>
