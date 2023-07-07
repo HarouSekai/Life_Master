@@ -234,7 +234,8 @@ footer> .content{
 }
 
 .wrapper-content {
-  width: calc(100% - 10px);
+  width: 100%;
+  max-width: 600px;
 }
 
 .content, .wrapper-content {
