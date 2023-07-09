@@ -85,7 +85,7 @@ class ArticlesController < ApplicationController
 
   def destroy_images(images)
     images.each do |image|
-      File.delete("public/image/#{image.id}.png")
+      # File.delete("public/image/#{image.id}.png")
     end
   end
 end
