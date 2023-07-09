@@ -765,6 +765,9 @@ input.user-form-item {
   }
 }
 @media (max-width: 768px) {
+  .article-header {
+    display: block;
+  }
   #header-user-name{
     margin-top: 0;
   }
