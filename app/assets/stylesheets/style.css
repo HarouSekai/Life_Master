@@ -824,9 +824,9 @@ input.user-form-item {
   .header-logo {
     font-size: 24px;
   }
-  #add-image-bar {
+  /* #add-image-bar {
     display: none;
-  }
+  } */
   .under-form-btn, .under-paragraph-form-btn {
     flex-direction: column-reverse;
   }
