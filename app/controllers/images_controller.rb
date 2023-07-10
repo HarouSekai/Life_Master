@@ -10,15 +10,10 @@ class ImagesController < ApplicationController
   end
 
   def create
-    if @image_data
-      @image = Image.new(@image_parameter)
-      if @image.save
-        binwrite_image
-        redirect_to edit_user_article_paragraph_path(@user, @article, @paragraph)
-      else
-        flash[:notice] = "画像の保存に失敗しました。"
-        render :new
-      end
+    @image = Image.new(image_params)
+    if @image.save
+      flash[:notice] = "画像を保存しました。"
+      redirect_to edit_user_article_paragraph_path(@user, @article, @paragraph)
     else
       flash[:notice] = "画像を選択してください。"
       render :new
@@ -29,15 +24,10 @@ class ImagesController < ApplicationController
   end
 
   def update
-    if @image_data
-      if @image.update(@image_parameter)
-        binwrite_image
-        flash[:notice] = "画像を更新しました。画像が表示されない場合は、ブラウザを閉じてから、再びアクセスしてください。"
-        redirect_to edit_user_article_paragraph_path(@user, @article, @paragraph)
-      else
-        flash[:notice] = "画像の更新に失敗しました。"
-        render :edit
-      end
+    @image = Image.find(params[:id])
+    if @image.update(image_params)
+      flash[:notice] = "画像を更新しました。"
+      redirect_to edit_user_article_paragraph_path(@user, @article, @paragraph)
     else
       flash[:notice] = "画像を選択してください。"
       render :edit
@@ -45,14 +35,9 @@ class ImagesController < ApplicationController
   end
 
   def destroy
-    if File.delete("public/image/#{@image.id}.png")
-      @image.destroy
-      flash[:notice] = "画像を削除しました。"
-      redirect_to edit_user_article_paragraph_path(@user, @article, @paragraph)
-    else
-      flash[:notice] = "画像の削除に失敗しました。"
-      redirect_to edit_user_article_paragraph_path(@user, @article, @paragraph)
-    end
+    @image.destroy
+    flash[:notice] = "画像を削除しました。"
+    redirect_to edit_user_article_paragraph_path(@user, @article, @paragraph)
   end
 
   private
@@ -74,14 +59,5 @@ class ImagesController < ApplicationController
 
   def image_params
     params.permit(:image, :image_explanation, :paragraph_id)
-    # @image_data = params.permit(:image)[:image]
-    # @image_exp = params.permit(:image_exp)[:image_exp]
-    # @paragraph_id = params.permit(:paragraph_id)[:paragraph_id]
-    # @image_parameter = {image_explanation: @image_exp, paragraph_id: @paragraph_id}
-  end
-
-  def binwrite_image
-    image_path = "public/image/#{@image.id}.png"
-    File.binwrite(image_path, @image_data.read)
   end
 end
