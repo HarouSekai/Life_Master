@@ -7,8 +7,8 @@
       <%= form_with url: user_article_paragraph_images_path(@user, @article, @paragraph), id: "edit-image-form", multipart: true, local: true do |f| %>
         <%= f.label :image, "画像を追加", class: "attach-image-label" %>
         <%= f.file_field :image, class: "attach-image" %>
-        <%= f.label :iamge_exp, "画像の説明" %>
-        <%= f.text_field :image_exp, id: "edit-image-exp" %>
+        <%= f.label :iamge_explanation, "画像の説明" %>
+        <%= f.text_field :image_explanation, id: "edit-image-exp" %>
 
         <div class="under-paragraph-form-btn">
           <div class="cancel-btn">
