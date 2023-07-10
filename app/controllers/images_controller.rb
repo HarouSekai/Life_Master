@@ -73,10 +73,11 @@ class ImagesController < ApplicationController
   end
 
   def image_params
-    @image_data = params.permit(:image)[:image]
-    @image_exp = params.permit(:image_exp)[:image_exp]
-    @paragraph_id = params.permit(:paragraph_id)[:paragraph_id]
-    @image_parameter = {image_explanation: @image_exp, paragraph_id: @paragraph_id}
+    params.permit(:image, :image_explanation, :paragraph_id)
+    # @image_data = params.permit(:image)[:image]
+    # @image_exp = params.permit(:image_exp)[:image_exp]
+    # @paragraph_id = params.permit(:paragraph_id)[:paragraph_id]
+    # @image_parameter = {image_explanation: @image_exp, paragraph_id: @paragraph_id}
   end
 
   def binwrite_image
