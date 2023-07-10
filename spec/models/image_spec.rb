@@ -18,6 +18,12 @@ RSpec.describe Image, type: :model do
     end
 
     context '画像情報を保存できない場合' do
+      it '画像がなければ保存できない' do
+        @image.image = nil
+        @image.valid?
+        expect(@image.errors.full_messages).to include("Image can't be blank")
+      end
+
       it '紐づく段落がなければ保存できない' do
         @image.paragraph = nil
         @image.valid?
