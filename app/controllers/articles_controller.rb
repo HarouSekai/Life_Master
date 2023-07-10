@@ -40,12 +40,7 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    images_array(@paragraphs)
-    if destroy_images(@images)
-      @article.destroy
-    else
-      redirect_to user_article_path(params[:user_id], params[:id])
-    end
+    @article.destroy
   end
 
   private
@@ -71,21 +66,5 @@ class ArticlesController < ApplicationController
   def move_to_show
     return unless current_user.id != params[:user_id].to_i
     redirect_to user_article_path(params[:user_id], params[:id])
-  end
-
-  def images_array(paragraphs)
-    @images = []
-    paragraphs.each do |paragraph|
-      paragraph.images.each do |image|
-        @images << image
-      end
-    end
-    return @images
-  end
-
-  def destroy_images(images)
-    images.each do |image|
-      # File.delete("public/image/#{image.id}.png")
-    end
   end
 end
