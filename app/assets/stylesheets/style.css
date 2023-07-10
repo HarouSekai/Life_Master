@@ -220,7 +220,7 @@ footer {
 .side {
   position: fixed;
   top: 120px;
-  right: calc((100vw - 1024px) / 2);
+  right: calc((100vw - 1024px) / 2 - 24px);
   width: 250px;
   overflow-y: auto;
 }
@@ -762,7 +762,7 @@ input.user-form-item {
 
 @media (max-width: 1140px) {
   .side {
-    right: 5vw;
+    right: calc(5vw - 24px);
   }
 }
 @media (max-width: 768px) {
