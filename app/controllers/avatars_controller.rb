@@ -9,11 +9,20 @@ class AvatarsController < ApplicationController
   def update
     if @user.avatar == nil
       @avatar = Avatar.new(avatar_params)
-      @avatar.save
+      if @avatar.save
+        redirect_to user_path(@user)
+      else
+        flash[:notice] = "画像を選択してください。"
+        render :edit
+      end
     else
-      @avatar.update(avatar_params)
+      if @avatar.update(avatar_params)
+        redirect_to user_path(@user)
+      else
+        flash[:notice] = "画像を選択してください。"
+        render :edit
+      end
     end
-    redirect_to user_path(@user)
   end
 
   def destroy
