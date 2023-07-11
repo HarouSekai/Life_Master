@@ -1,6 +1,7 @@
 <%= render "shared/header" %>
 <div class="wrapper">
   <div class="wrapper-content">
+    <div><%= flash[:notice] %></div>
     <div class="avatar-edit">
       <% if @user.avatar == nil %>
         <%= image_tag "user.svg" %>
