@@ -20,7 +20,11 @@
 
         <div class="article-info">
           <div class="article-show-avatar">
-            <%= image_tag "user.svg"%>
+            <% if @user.avatar == nil %>
+              <%= image_tag "user.svg"%>
+            <% else %>
+              <%= image_tag @user.avatar.avatar %>
+            <% end %>
           </div>
           <div class="article-info-right">
             <div class="article-show-user-name">
