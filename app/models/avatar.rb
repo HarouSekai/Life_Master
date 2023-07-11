@@ -1,5 +1,5 @@
 class Avatar < ApplicationRecord
   belongs_to :user
   has_one_attached :avatar
-  validates :user_id, presence: true
+  validates :avatar, :user_id, presence: true
 end
