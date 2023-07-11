@@ -5,7 +5,11 @@
     </div>
     <div class="article-header-right">
       <div class="article-index-avatar">
-        <%= image_tag "user.svg" %>
+        <% if article.user.avatar == nil %>
+          <%= image_tag "user.svg" %>
+        <% else %>
+          <%= image_tag article.user.avatar.avatar %>
+        <% end %>
       </div>
       <div class="article-index-user-name">
         <%= article.user.name %>
