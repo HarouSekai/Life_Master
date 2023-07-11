@@ -10,8 +10,15 @@
       <div class="avatar-edit-circle"></div>
     </div>
     <%= form_with url: "/users/#{@user.id}/avatar", id: "edit-avatar-form", multipart: true, method: :put, local: true do |f| %>
-      <%= f.label :avatar, "画像を変更" %>
-      <%= f.file_field :avatar %>
+      <div class="edit-avatar-flex">
+        <div>
+          <%= f.label :avatar, "画像を変更" %>
+          <%= f.file_field :avatar %>
+        </div>
+        <div>
+          [ <%= link_to "画像を削除", "/users/#{@user.id}/avatar", method: :delete %> ]
+        </div>
+      </div>
       <div class="under-form-btn">
         <div class="cancel-btn">
           <%= link_to "キャンセル", user_path(@user) %>
