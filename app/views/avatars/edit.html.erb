@@ -2,7 +2,11 @@
 <div class="wrapper">
   <div class="wrapper-content">
     <div class="avatar-edit">
-      <%= image_tag "user.svg" %>
+      <% if @user.avatar == nil %>
+        <%= image_tag "user.svg" %>
+      <% else %>
+        <%= image_tag @avatar.avatar %>
+      <% end %>
       <div class="avatar-edit-circle"></div>
     </div>
     <%= form_with url: "/users/#{@user.id}/avatar", id: "edit-avatar-form", multipart: true, method: :put, local: true do |f| %>
