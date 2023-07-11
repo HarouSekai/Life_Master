@@ -8,6 +8,8 @@ class AvatarsController < ApplicationController
     if @user.avatar == nil
       @avatar = Avatar.new(avatar_params)
       @avatar.save
+    else
+      @avatar.update(avatar_params)
     end
     redirect_to user_path(@user)
   end
