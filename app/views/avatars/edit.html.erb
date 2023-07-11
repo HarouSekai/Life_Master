@@ -1,2 +1,25 @@
-<h1>Avatars#edit</h1>
-<p>Find me in app/views/avatars/edit.html.erb</p>
+<%= render "shared/header" %>
+<div class="wrapper">
+  <div class="wrapper-content">
+    <div class="avatar-edit">
+      <%= image_tag "user.svg" %>
+      <div class="avatar-edit-circle"></div>
+    </div>
+    <%= form_with url: "/users/#{@user.id}/avatar", id: "edit-avatar-form", multipart: true, local: true do |f| %>
+      <%= f.label :avatar, "画像を変更" %>
+      <%= f.file_field :avatar %>
+      <div class="under-form-btn">
+        <div class="cancel-btn">
+          <%= link_to "キャンセル", user_path(@user) %>
+        </div>
+        <div class="reset-btn">
+          <%= link_to "リセット", "/users/#{@user.id}/avatar/edit" %>
+        </div>
+        <%= f.submit "保存", class: "save-btn", id: "edit-submit-btn" %>
+      </div>
+    <% end %>
+  </div>
+  <!-- //wrapper-content -->
+</div>
+<!-- //wrapper -->
+<%= render "shared/footer" %>
