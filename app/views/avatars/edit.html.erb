@@ -5,7 +5,7 @@
       <%= image_tag "user.svg" %>
       <div class="avatar-edit-circle"></div>
     </div>
-    <%= form_with url: "/users/#{@user.id}/avatar", id: "edit-avatar-form", multipart: true, local: true do |f| %>
+    <%= form_with url: "/users/#{@user.id}/avatar", id: "edit-avatar-form", multipart: true, method: :put, local: true do |f| %>
       <%= f.label :avatar, "画像を変更" %>
       <%= f.file_field :avatar %>
       <div class="under-form-btn">
