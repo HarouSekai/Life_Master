@@ -4,7 +4,11 @@
     <div class="user-info">
       <div class="mypage-avatar">
         <div class="mypage-avatar-inner">
-          <%= image_tag "user.svg" %>
+          <% if @user.avatar == nil %>
+            <%= image_tag "user.svg" %>
+          <% else %>
+            <%= image_tag @user.avatar.avatar %>
+          <% end %>
         </div>
         <% if user_signed_in? && current_user.id == @user.id %>
           <%= link_to "/users/#{@user.id}/avatar/edit", class: "edit-btn", id: "mypage-avatar-edit" do %>
