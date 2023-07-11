@@ -16,6 +16,11 @@ class AvatarsController < ApplicationController
     redirect_to user_path(@user)
   end
 
+  def destroy
+    @user.avatar.destroy
+    redirect_to user_path(@user)
+  end
+
   private
 
   def find_user_avatar
