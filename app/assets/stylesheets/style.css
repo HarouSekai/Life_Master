@@ -470,12 +470,11 @@ input.user-form-item {
   margin-right: 35px;
 }
 
-.mypage-edit-or-delete > a {
-  display: block;
+.mypage-edit-or-delete a, .edit-avatar-flex a {
   color: #27508d;
 }
 
-.mypage-edit-or-delete > a:hover {
+.mypage-edit-or-delete a:hover, .edit-avatar-flex a:hover {
   text-decoration: underline;
 }
 
@@ -548,6 +547,12 @@ input.user-form-item {
   margin-bottom: 16px;
 }
 
+.edit-avatar-flex {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 55px;
+}
+
 #edit-avatar-form,
 .article-form, #article-hard-code, #edit-article-form,
 .paragraph-form, #paragraph-hard-code, #edit-paragrapth-form,
@@ -577,10 +582,6 @@ input.user-form-item {
 #edit-image-exp {
   padding: 8px;
   margin-bottom: 16px;
-}
-
-#edit-avatar-form input:not(.save-btn) {
-  margin-bottom: 55px;
 }
 
 .article-form textarea,
