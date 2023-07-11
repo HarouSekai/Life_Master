@@ -341,7 +341,7 @@ footer> .content{
   width: 300px;
   height: 300px;
   background-color: rgba(32, 32, 32, 0.3);
-  margin-bottom: 55px;
+  margin: 0 auto 55px;
 }
 
 .avatar-edit-circle {
@@ -548,12 +548,17 @@ input.user-form-item {
   margin-bottom: 16px;
 }
 
+#edit-avatar-form,
 .article-form, #article-hard-code, #edit-article-form,
 .paragraph-form, #paragraph-hard-code, #edit-paragrapth-form,
 #edit-image-form {
   width: 100%;
   max-width: 600px;
   margin-bottom: 55px;
+}
+
+#edit-avatar-form label, #edit-avatar-form input:not(.save-btn) {
+  display: block;
 }
 
 .article-form label, .article-form input:not(.save-btn), .article-form textarea,
@@ -572,6 +577,10 @@ input.user-form-item {
 #edit-image-exp {
   padding: 8px;
   margin-bottom: 16px;
+}
+
+#edit-avatar-form input:not(.save-btn) {
+  margin-bottom: 55px;
 }
 
 .article-form textarea,
