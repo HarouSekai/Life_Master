@@ -4,10 +4,14 @@
     <div class="user-info">
       <div class="mypage-avatar">
         <div class="mypage-avatar-inner">
-          <%= image_tag "user.svg" %>
+          <% if @user.avatar == nil %>
+            <%= image_tag "user.svg" %>
+          <% else %>
+            <%= image_tag @user.avatar.avatar %>
+          <% end %>
         </div>
         <% if user_signed_in? && current_user.id == @user.id %>
-          <%= link_to "#/avatars/edit", class: "edit-btn", id: "mypage-avatar-edit" do %>
+          <%= link_to "/users/#{@user.id}/avatar/edit", class: "edit-btn", id: "mypage-avatar-edit" do %>
             <%= image_tag "edit.svg", alt: "編集" %>
           <% end %>
         <% end %>
@@ -17,8 +21,12 @@
       </div>
       <% if user_signed_in? && current_user.id == @user.id %>
         <div class="mypage-edit-or-delete">
-          <%= link_to "アカウント編集", edit_registration_path(@user) %>
-          <%= link_to "アカウント削除", registration_path(@user), method: :delete  %>
+          <div>
+            [ <%= link_to "アカウント編集", edit_registration_path(@user) %> ]
+          </div>
+          <div>
+            [ <%= link_to "アカウント削除", registration_path(@user), method: :delete  %> ]
+          </div>
         </div>
       <% end %>
     </div>
