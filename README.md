@@ -86,13 +86,16 @@ https://docs.google.com/spreadsheets/d/1JRbDY71gTuhDGhRW3pDavLwDgaZRleQ_kkupSTxs
 
 [![Image from Gyazo](https://i.gyazo.com/fea263639185ec2359ec4f67747d0936.gif)](https://gyazo.com/fea263639185ec2359ec4f67747d0936)
 
-# 実装予定の機能
+## その他の機能
 
 * 段落削除機能<br>
 * 画像作成機能<br>
 * 画像編集機能<br>
 * 画像削除機能<br>
-* ユーザーマイページ（ユーザー情報の編集、ユーザーの削除、ユーザーが投稿した記事の一覧表示、アバター画像の編集）<br>
+* ユーザーマイページ（ユーザー情報の編集、ユーザーの削除、ユーザーが投稿した記事の一覧表示、アバター画像の作成・編集・削除）<br>
+
+# 実装予定の機能
+
 * アプリケーション紹介ページ<br>
 
 # データベース設計
