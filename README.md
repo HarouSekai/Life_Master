@@ -93,10 +93,11 @@ https://docs.google.com/spreadsheets/d/1JRbDY71gTuhDGhRW3pDavLwDgaZRleQ_kkupSTxs
 * 画像編集機能<br>
 * 画像削除機能<br>
 * ユーザーマイページ（ユーザー情報の編集、ユーザーの削除、ユーザーが投稿した記事の一覧表示、アバター画像の作成・編集・削除）<br>
+* アプリケーション紹介ページ<br>
 
 # 実装予定の機能
 
-* アプリケーション紹介ページ<br>
+* 記事検索機能<br>
 
 # データベース設計
 
