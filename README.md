@@ -96,6 +96,7 @@ https://docs.google.com/spreadsheets/d/1JRbDY71gTuhDGhRW3pDavLwDgaZRleQ_kkupSTxs
 * 画像削除機能<br>
 * ユーザーマイページ（ユーザー情報の編集、ユーザーの削除、ユーザーが投稿した記事の一覧表示、アバター画像の作成・編集・削除）<br>
 * アプリケーション紹介ページ<br>
+[![Image from Gyazo](https://i.gyazo.com/9b74f7f3cd8ed94fbe9fc578a9897d15.gif)](https://gyazo.com/9b74f7f3cd8ed94fbe9fc578a9897d15)
 
 # 実装予定の機能
 
