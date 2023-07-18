@@ -480,12 +480,13 @@ input.user-form-item {
   margin-right: 35px;
 }
 
-.mypage-edit-or-delete a, .edit-avatar-flex a {
+.mypage-edit-or-delete a, .edit-avatar-flex a, #trash-btn {
   color: #27508d;
 }
 
-.mypage-edit-or-delete a:hover, .edit-avatar-flex a:hover {
+.mypage-edit-or-delete a:hover, .edit-avatar-flex a:hover, #trash-btn:hover {
   text-decoration: underline;
+  cursor: pointer;
 }
 
 #mypage-avatar-edit {
