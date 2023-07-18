@@ -25,7 +25,20 @@
             [ <%= link_to "アカウント編集", edit_registration_path(@user) %> ]
           </div>
           <div>
-            [ <%= link_to "アカウント削除", registration_path(@user), method: :delete  %> ]
+            [ <span id="trash-btn">アカウント削除</span> ]
+          </div>
+        </div>
+        <div class="pop-up" id="pop-up">
+          <div class="pop-up-main">
+            <div class="pop-up-message">アカウントを削除しますか？</div>
+            <div class="pop-up-flex">
+              <div class="cancel-btn">
+                <%= link_to "キャンセル", user_path(@user) %>
+              </div>
+              <div class="ok-btn">
+                <%= link_to "OK", registration_path(@user), method: :delete %>
+              </div>
+            </div>
           </div>
         </div>
       <% end %>

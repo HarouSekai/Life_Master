@@ -9,9 +9,22 @@
       <label class="edit-btn" id="edit-outline-btn">
         <%= image_tag "edit.svg", alt: "編集"%>
       </label>
-      <%= link_to user_article_path(@user, @article), class: "trash-btn", id: "trash-outline-btn", method: :delete do %>
+      <label class="trash-btn" id="trash-btn">
         <%= image_tag "trash.svg", alt: "削除" %>
-      <% end %>
+      </label>
+      <div class="pop-up" id="pop-up">
+        <div class="pop-up-main">
+          <div class="pop-up-message">記事を削除しますか？</div>
+          <div class="pop-up-flex">
+            <div class="cancel-btn">
+              <%= link_to "キャンセル", edit_user_article_path(@user, @article) %>
+            </div>
+            <div class="ok-btn">
+              <%= link_to "OK", user_article_path(@user, @article), method: :delete %>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <%= form_with model: [@user, @article], id: "edit-article-form", local: true do |f| %>
