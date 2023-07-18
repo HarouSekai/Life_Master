@@ -694,26 +694,59 @@ input.user-form-item {
   background-color: #eff7cf;
 }
 
-.under-form-btn, .under-paragraph-form-btn {
+.pop-up{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 10;
+  display: none;
+}
+
+.pop-up-main{
+  position: absolute;
+  top: calc(50vh - 120px);
+  left: 50vw;
+  transform: translateX(-50%);
+  background-color: #fefefe;
+  border: 2px solid #ccc;
+  width: 90%;
+  max-width: 500px;
+  margin: auto;
+}
+
+.pop-up-message{
+  margin: 55px 0;
+  text-align: center;
+}
+
+.under-form-btn, .under-paragraph-form-btn, .pop-up-flex {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+}
+
+.pop-up-flex{
+  justify-content: space-around;
+  margin-bottom: 55px;
 }
 
 .under-paragraph-form-btn {
   margin: 55px 0;
 }
 
-.cancel-btn, .reset-btn, .save-btn {
+.cancel-btn, .reset-btn, .save-btn, .ok-btn {
   width: 120px;
   margin-bottom: 16px;
 }
 
-.cancel-btn > a, .reset-btn > a {
+.cancel-btn > a, .reset-btn > a, .ok-btn > a {
   width: 100%;
 }
 
-.cancel-btn > a, .reset-btn > a, .save-btn {
+.cancel-btn > a, .reset-btn > a, .save-btn, .ok-btn > a {
   background-color: #3ddc84;
   display: block;
   padding: 0;
@@ -725,11 +758,11 @@ input.user-form-item {
   line-height: 36px;
 }
 
-.cancel-btn > a:hover, .reset-btn > a:hover, .save-btn:hover {
+.cancel-btn > a:hover, .reset-btn > a:hover, .save-btn:hover, .ok-btn > a:hover {
   background-color: #eff7cf;
 }
 
-.cancel-btn > a, .reset-btn > a {
+.cancel-btn > a, .reset-btn > a, .ok-btn > a {
   color: #222;
 }
 
