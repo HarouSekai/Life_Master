@@ -11,6 +11,10 @@ ja:
         headline: 見出し
         content: 本文
         article_id: 記事
+      image:
+        image: 画像
+        image_explanation: 画像の説明
+        paragraph_id: 段落
   time:
     formats:
       default: "%Y年%m月%d日"
