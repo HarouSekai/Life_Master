@@ -21,13 +21,13 @@ RSpec.describe Image, type: :model do
       it '画像がなければ保存できない' do
         @image.image = nil
         @image.valid?
-        expect(@image.errors.full_messages).to include("Image can't be blank")
+        expect(@image.errors.full_messages).to include("画像をアップロードしてください")
       end
 
       it '紐づく段落がなければ保存できない' do
         @image.paragraph = nil
         @image.valid?
-        expect(@image.errors.full_messages).to include("Paragraph must exist")
+        expect(@image.errors.full_messages).to include("段落を作成してください")
       end
     end
   end
