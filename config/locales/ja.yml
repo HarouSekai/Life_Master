@@ -7,6 +7,10 @@ ja:
         title: タイトル
         summary: サマリー
         user_id: ユーザー
+      paragraph:
+        headline: 見出し
+        content: 本文
+        article_id: 記事
   time:
     formats:
       default: "%Y年%m月%d日"
