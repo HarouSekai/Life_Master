@@ -1,5 +1,6 @@
 class Avatar < ApplicationRecord
   belongs_to :user
   has_one_attached :avatar
-  validates :avatar, :user_id, presence: true
+  validates :avatar, presence: {message: 'をアップロードしてください'}
+  validates :user_id, presence: {message: 'を新規登録してください'}
 end

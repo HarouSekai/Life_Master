@@ -15,6 +15,9 @@ ja:
         image: 画像
         image_explanation: 画像の説明
         paragraph_id: 段落
+      avatar:
+        avatar: プロフィール画像
+        user_id: ユーザー
   time:
     formats:
       default: "%Y年%m月%d日"
