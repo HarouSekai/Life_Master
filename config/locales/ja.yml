@@ -7,3 +7,6 @@ ja:
         title: タイトル
         summary: サマリー
         user_id: ユーザー
+  time:
+    formats:
+      default: "%Y年%m月%d日"
