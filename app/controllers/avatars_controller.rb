@@ -13,14 +13,14 @@ class AvatarsController < ApplicationController
         redirect_to user_path(@user)
       else
         flash[:notice] = "画像を選択してください。"
-        render :edit
+        redirect_to "/users/#{params[:user_id]}/avatar/edit"
       end
     else
       if @avatar.update(avatar_params)
         redirect_to user_path(@user)
       else
         flash[:notice] = "画像を選択してください。"
-        render :edit
+        redirect_to "/users/#{params[:user_id]}/avatar/edit"
       end
     end
   end
