@@ -32,7 +32,7 @@ RSpec.describe Paragraph, type: :model do
       it '紐づく記事がなければ保存できない' do
         @paragraph.article = nil
         @paragraph.valid?
-        expect(@paragraph.errors.full_messages).to include("Article must exist")
+        expect(@paragraph.errors.full_messages).to include("記事を作成してください")
       end
     end
   end
