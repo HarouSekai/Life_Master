@@ -3,3 +3,6 @@ ja:
     attributes:
       user:
         name: ユーザー名
+      article:
+        title: タイトル
+        summary: サマリー
