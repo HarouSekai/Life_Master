@@ -1,0 +1,9 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        name: ユーザー名
+      article:
+        title: タイトル
+        summary: サマリー
+        user_id: ユーザー
