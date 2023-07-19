@@ -26,7 +26,9 @@ class AvatarsController < ApplicationController
   end
 
   def destroy
-    @user.avatar.destroy
+    unless @user.avatar == nil
+      @user.avatar.destroy
+    end
     redirect_to user_path(@user)
   end
 
