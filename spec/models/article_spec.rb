@@ -16,19 +16,19 @@ RSpec.describe Article, type: :model do
       it 'タイトルがなければ保存できない' do
         @article.title = ''
         @article.valid?
-        expect(@article.errors.full_messages).to include("Title can't be blank")
+        expect(@article.errors.full_messages).to include("タイトルを入力してください")
       end
 
       it 'サマリーがなければ保存できない' do
         @article.summary = ''
         @article.valid?
-        expect(@article.errors.full_messages).to include("Summary can't be blank")
+        expect(@article.errors.full_messages).to include("サマリーを入力してください")
       end
 
       it '紐づくユーザーがなければ保存できない' do
         @article.user = nil
         @article.valid?
-        expect(@article.errors.full_messages).to include("User must exist")
+        expect(@article.errors.full_messages).to include("ユーザーを新規登録してください")
       end
     end
   end
