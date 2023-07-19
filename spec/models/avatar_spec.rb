@@ -16,13 +16,13 @@ RSpec.describe Avatar, type: :model do
       it 'アバター画像がなければアバターを保存できない' do
         @avatar.avatar = nil
         @avatar.valid?
-        expect(@avatar.errors.full_messages).to include("Avatar can't be blank")
+        expect(@avatar.errors.full_messages).to include("プロフィール画像をアップロードしてください")
       end
 
       it '紐づくユーザーがなければ保存できない' do
         @avatar.user = nil
         @avatar.valid?
-        expect(@avatar.errors.full_messages).to include("User can't be blank")
+        expect(@avatar.errors.full_messages).to include("ユーザーを新規登録してください")
       end
     end
   end
