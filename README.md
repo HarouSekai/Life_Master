@@ -98,10 +98,6 @@ https://docs.google.com/spreadsheets/d/1JRbDY71gTuhDGhRW3pDavLwDgaZRleQ_kkupSTxs
 * アプリケーション紹介ページ<br>
 [![Image from Gyazo](https://i.gyazo.com/9b74f7f3cd8ed94fbe9fc578a9897d15.gif)](https://gyazo.com/9b74f7f3cd8ed94fbe9fc578a9897d15)
 
-# 実装予定の機能
-
-* エラーメッセージの日本語化<br>
-
 # データベース設計
 
 [![Image from Gyazo](https://i.gyazo.com/8fe86bce7f17de3c94707ce98f1f3bd7.png)](https://gyazo.com/8fe86bce7f17de3c94707ce98f1f3bd7)
