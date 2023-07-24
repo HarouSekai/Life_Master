@@ -104,7 +104,7 @@ https://docs.google.com/spreadsheets/d/1JRbDY71gTuhDGhRW3pDavLwDgaZRleQ_kkupSTxs
 
 # 画面遷移図
 
-[![Image from Gyazo](https://i.gyazo.com/7d1d9806e931a90a5ea1e7e093705124.png)](https://gyazo.com/7d1d9806e931a90a5ea1e7e093705124)
+[![Image from Gyazo](https://i.gyazo.com/143c133d7fdd055c917d3d04733703eb.png)](https://gyazo.com/143c133d7fdd055c917d3d04733703eb)
 
 # 開発環境
 * HTML<br>
