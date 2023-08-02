@@ -13,7 +13,6 @@
     <!-- //hard-code-image -->
 
     <%= form_with url: user_article_paragraph_image_path(@user, @article, @paragraph, @image), id: "edit-image-form", method: :patch, multipart: true, local: true do |f| %>
-      <%= f.label :image, "画像を変更", class: "attach-image-label" %>
       <%= f.file_field :image, class: "attach-image" %>
       <%= f.label :iamge_explanation, "画像の説明" %>
       <%= f.text_field :image_explanation, id: "edit-image-exp", value: @image.image_explanation %>
