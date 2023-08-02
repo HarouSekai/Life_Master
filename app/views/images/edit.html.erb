@@ -4,9 +4,9 @@
     <div><%= flash[:notice] %></div>
     <h2>画像を編集</h2>
     
-    <div class="hard-code-image">
+    <div class="hard-code-image" id="image-preview">
       <%= image_tag @image.image %>
-      <div class="hard-code-image-exp">
+      <div class="hard-code-image-exp" id="image-exp-preview">
         <%= @image.image_explanation %>
       </div>
     </div>
