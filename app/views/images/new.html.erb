@@ -1,27 +1,31 @@
 <%= render partial: "shared/header" %>
 <div class="wrapper">
   <div class="main">
-      <div><%= flash[:notice] %></div>
-      <h2>画像を追加</h2>
+    <div><%= flash[:notice] %></div>
+    <h2>画像を追加</h2>
       
-      <%= form_with url: user_article_paragraph_images_path(@user, @article, @paragraph), id: "edit-image-form", multipart: true, local: true do |f| %>
-        <%= f.label :image, "画像を追加", class: "attach-image-label" %>
-        <%= f.file_field :image, class: "attach-image" %>
-        <%= f.label :iamge_explanation, "画像の説明" %>
-        <%= f.text_field :image_explanation, id: "edit-image-exp" %>
+    <div class="hard-code-image" id="image-preview">
+      <div class="hard-code-image-exp" id="image-exp-preview"></div>
+    </div>
+    <!-- //hard-code-image -->
 
-        <div class="under-paragraph-form-btn">
-          <div class="cancel-btn">
-            <%= link_to "キャンセル", edit_user_article_paragraph_path(@user, @article, @paragraph) %>
-          </div>
-          <div class="reset-btn">
-            <%= link_to "リセット", new_user_article_paragraph_image_path(@user, @article, @paragraph) %>
-          </div>
-          <%= f.submit "保存", class: "save-btn", id: "edit-submit-btn" %>
+    <%= form_with url: user_article_paragraph_images_path(@user, @article, @paragraph), id: "edit-image-form", multipart: true, local: true do |f| %>
+      <%= f.file_field :image, class: "attach-image" %>
+      <%= f.label :iamge_explanation, "画像の説明" %>
+      <%= f.text_field :image_explanation, id: "edit-image-exp" %>
+
+      <div class="under-paragraph-form-btn">
+        <div class="cancel-btn">
+          <%= link_to "キャンセル", edit_user_article_paragraph_path(@user, @article, @paragraph) %>
         </div>
-        
-      <% end %>
-      <!-- //edit-image-form -->
+        <div class="reset-btn">
+          <%= link_to "リセット", new_user_article_paragraph_image_path(@user, @article, @paragraph) %>
+        </div>
+        <%= f.submit "保存", class: "save-btn", id: "edit-submit-btn" %>
+      </div>
+      
+    <% end %>
+    <!-- //edit-image-form -->
 
   </div>
   <!-- //main -->
